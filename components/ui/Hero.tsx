@@ -15,7 +15,7 @@ export default function Hero() {
       callbackUrl:
         process.env.NODE_ENV == "development"
           ? "http://localhost:3000"
-          : "https://app.rapidforms.co",
+          : "https://ideavalidator-v1.vercel.app",
     });
     // } else {
     //   router.push("https://rapidforms.co/demo", {});
