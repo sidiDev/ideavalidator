@@ -1,7 +1,27 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "./button";
+import { signIn, useSession } from "next-auth/react";
 
 export default function Hero() {
+  const { data: session } = useSession();
+
+  const handleLogin = () => {
+    // if (process.env.NODE_ENV == "development") {
+    // setIsLoading(true);
+    signIn("google", {
+      redirect: true,
+      callbackUrl:
+        process.env.NODE_ENV == "development"
+          ? "http://localhost:3000"
+          : "https://app.rapidforms.co",
+    });
+    // } else {
+    //   router.push("https://rapidforms.co/demo", {});
+    // }
+  };
+
   return (
     <div className="h-[50rem] w-full bg-white bg-dot-black/[0.2] relative flex items-center justify-center">
       {/* Radial gradient for the container to give a faded look */}
@@ -19,7 +39,7 @@ export default function Hero() {
           about your idea so that you know whether it's worth pursuing.
         </p>
         <div className="flex justify-center gap-3">
-          <Button>Validate Idea</Button>
+          <Button onClick={handleLogin}>Validate Idea</Button>
           <Button asChild variant="outline" className="bg-white shadow-sm">
             <Link href="/">Watch Demo</Link>
           </Button>
