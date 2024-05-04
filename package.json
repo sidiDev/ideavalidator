@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate:interfaces": "npx @edgedb/generate interfaces",
+    "generate:edgeql": "npx @edgedb/generate edgeql-js",
+    "generate:all": "pnpm generate:interfaces && pnpm generate:edgeql"
   },
   "dependencies": {
     "@auth/edgedb-adapter": "^1.0.0",
