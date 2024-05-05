@@ -15,7 +15,7 @@ export default function Navbar() {
         <div className="">
           <Brand href="https://rapidforms.co" />
         </div>
-        <div>
+        <ul>
           {session && session.user ? (
             <NavLink
               href="/dashboard"
@@ -31,7 +31,7 @@ export default function Navbar() {
               Login
             </ButtonLogin>
           )}
-        </div>
+        </ul>
       </nav>
     </header>
   );

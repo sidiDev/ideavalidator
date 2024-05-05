@@ -56,10 +56,11 @@ export default () => {
                 </p>
                 <DropdownMenu.Item asChild className="outline-none">
                   <Link
-                    href="/dashboard"
+                    href="https://twitter.com/sidi_jeddou_dev"
+                    target="_balnk"
                     className="block w-full px-4 py-2 hover:bg-zinc-100 duration-150 text-left"
                   >
-                    Dashboard
+                    Support
                   </Link>
                 </DropdownMenu.Item>
                 <DropdownMenu.Item asChild className="outline-none">

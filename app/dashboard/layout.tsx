@@ -9,7 +9,7 @@ export default async function Layout({ children }: { children: ReactNode }) {
   return (
     <main>
       <DashboardNavbar />
-      {children}
+      <div className="mt-20 max-w-screen-md mx-auto px-4">{children}</div>
     </main>
   );
 }
