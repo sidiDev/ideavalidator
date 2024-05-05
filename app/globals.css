@@ -1,4 +1,7 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-  
+@tailwind components;
+@tailwind utilities;
+
+.custom-screen-lg {
+  @apply max-w-screen-lg mx-auto px-4;
+}
