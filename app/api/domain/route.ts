@@ -17,7 +17,7 @@ export async function GET(request: Request) {
   //   `https://api.sandbox.namecheap.com/xml.response?ApiUser=${USERNAME_NAMECHEAP}&ApiKey=${API_KEY_NAMECHEAP}&UserName=${USERNAME_NAMECHEAP}&ClientIp=${CLIENT_IP_NAMECHEAP}&Command=namecheap.domains.check&DomainList=Foundrify.com`
   // );
 
-  const apiEndpoint = "https://api.godaddy.com/v1/domains/suggest";
+  const apiEndpoint = "https://api.godaddy.com/v1/domains/available";
   const apiKey = process.env.API_KEY_GODADDY;
   const apiSecret = process.env.API_SECRET_GODADDY;
   const query = "formbuilder"; // Replace with the query for which you want domain suggestions
@@ -32,13 +32,14 @@ export async function GET(request: Request) {
     const { data } = await axios.post(
       apiEndpoint,
       {
-        query: query,
-        type: "domain", // Specify the type of suggestion you want (domain, email, etc.)
+        domains: ["ragklabs.com"],
+        // query: query,
+        // type: "domain", // Specify the type of suggestion you want (domain, email, etc.)
       },
       { headers }
     );
-    return NextResponse.json({ data });
     console.log(data); // Assuming you want to log the response
+    return NextResponse.json({ data });
   } catch (error) {
     console.error("Error occurred:", error); // Logging the error message
     return NextResponse.json({ error });
