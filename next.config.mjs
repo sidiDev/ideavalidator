@@ -7,9 +7,6 @@ const nextConfig = {
     API_KEY_NAMECHEAP: process.env.API_KEY_NAMECHEAP,
     USERNAME_NAMECHEAP: process.env.USERNAME_NAMECHEAP,
     CLIENT_IP_NAMECHEAP: process.env.CLIENT_IP_NAMECHEAP,
-
-    API_KEY_GODADDY: process.env.API_KEY_GODADDY,
-    API_SECRET_GODADDY: process.env.API_SECRET_GODADDY,
   },
 };
 
