@@ -24,7 +24,7 @@ export async function GET(request: Request) {
   );
   const json = xmljs.xml2json(data, options);
 
-  console.log(JSON.parse(json).ApiResponse.CommandResponse);
+  // console.log(JSON.parse(json).ApiResponse.CommandResponse);
 
   return NextResponse.json({
     domain_check_result:
