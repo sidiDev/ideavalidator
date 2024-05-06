@@ -22,6 +22,7 @@ export async function GET(request: Request) {
   const { data } = await axios.get(
     `${url}?ApiUser=${USERNAME_NAMECHEAP}&ApiKey=${API_KEY_NAMECHEAP}&UserName=${USERNAME_NAMECHEAP}&ClientIp=${CLIENT_IP_NAMECHEAP}&Command=namecheap.domains.getList&SearchTerm=Quirvio&PageSize100&Page=10`
   );
+
   const json = xmljs.xml2json(data, options);
 
   // console.log(JSON.parse(json).ApiResponse.CommandResponse);
