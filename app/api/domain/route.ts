@@ -1,5 +1,6 @@
 import axios from "axios";
 import { NextResponse } from "next/server";
+import { env } from "process";
 import xmljs from "xml-js";
 
 // https://ip.web-hosting.com/
@@ -13,14 +14,20 @@ export async function GET(request: Request) {
     ignoreAttributes: false,
   };
 
+  const url =
+    env.NODE_ENV == "development"
+      ? "https://api.sandbox.namecheap.com/xml.response"
+      : "https://api.namecheap.com/xml.response";
+
   const { data } = await axios.get(
-    `https://api.namecheap.com/xml.response?ApiUser=${USERNAME_NAMECHEAP}&ApiKey=${API_KEY_NAMECHEAP}&UserName=${USERNAME_NAMECHEAP}&ClientIp=${CLIENT_IP_NAMECHEAP}&Command=namecheap.domains.check&DomainList=Formifya.com`
+    `${url}?ApiUser=${USERNAME_NAMECHEAP}&ApiKey=${API_KEY_NAMECHEAP}&UserName=${USERNAME_NAMECHEAP}&ClientIp=${CLIENT_IP_NAMECHEAP}&Command=namecheap.domains.check&DomainList=Entrepreneursite.com`
   );
   const json = xmljs.xml2json(data, options);
 
-  // console.log(JSON.parse(json).ApiResponse.CommandResponse);
+  console.log(JSON.parse(json).ApiResponse.CommandResponse);
 
   return NextResponse.json({
-    domain_check_result: JSON.parse(json).ApiResponse,
+    domain_check_result:
+      JSON.parse(json).ApiResponse.CommandResponse.DomainCheckResult,
   });
 }
