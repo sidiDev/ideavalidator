@@ -27,7 +27,6 @@ export async function GET(request: Request) {
   // console.log(JSON.parse(json).ApiResponse.CommandResponse);
 
   return NextResponse.json({
-    domain_check_result:
-      JSON.parse(json).ApiResponse.CommandResponse.DomainCheckResult,
+    domain_check_result: JSON.parse(json).ApiResponse,
   });
 }
