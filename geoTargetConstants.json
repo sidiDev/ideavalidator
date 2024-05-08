@@ -1,0 +1,1197 @@
+{
+  "ar": {
+    "locale": "ar",
+    "lang": "Arabic",
+    "criterionId": 1019,
+    "suggestions": [
+      {
+        "country": "Egypt",
+        "resourceName": "geoTargetConstants/2818"
+      },
+      {
+        "country": "Algeria",
+        "resourceName": "geoTargetConstants/2012"
+      },
+      {
+        "country": "Sudan",
+        "resourceName": "geoTargetConstants/2736"
+      },
+      {
+        "country": "South Sudan",
+        "resourceName": "geoTargetConstants/2728"
+      },
+      {
+        "country": "Iraq",
+        "resourceName": "geoTargetConstants/2368"
+      },
+      {
+        "country": "Morocco",
+        "resourceName": "geoTargetConstants/2504"
+      },
+      {
+        "country": "Saudi Arabia",
+        "resourceName": "geoTargetConstants/2682"
+      },
+      {
+        "country": "Yemen",
+        "resourceName": "geoTargetConstants/2887"
+      },
+      {
+        "country": "Chad",
+        "resourceName": "geoTargetConstants/2148"
+      },
+      {
+        "country": "Somalia",
+        "resourceName": "geoTargetConstants/2706"
+      },
+      {
+        "country": "Tunisia",
+        "resourceName": "geoTargetConstants/2788"
+      },
+      {
+        "country": "Jordan",
+        "resourceName": "geoTargetConstants/2400"
+      },
+      {
+        "country": "United Arab Emirates",
+        "resourceName": "geoTargetConstants/2784"
+      },
+      {
+        "country": "Israel",
+        "resourceName": "geoTargetConstants/2376"
+      },
+      {
+        "country": "Libya",
+        "resourceName": "geoTargetConstants/2434"
+      },
+      {
+        "country": "Lebanon",
+        "resourceName": "geoTargetConstants/2422"
+      },
+      {
+        "country": "Eritrea",
+        "resourceName": "geoTargetConstants/2232"
+      },
+      {
+        "country": "Oman",
+        "resourceName": "geoTargetConstants/2512"
+      },
+      {
+        "country": "Mauritania",
+        "resourceName": "geoTargetConstants/2478"
+      },
+      {
+        "country": "Kuwait",
+        "resourceName": "geoTargetConstants/2414"
+      },
+      {
+        "country": "Qatar",
+        "resourceName": "geoTargetConstants/2634"
+      },
+      {
+        "country": "Bahrain",
+        "resourceName": "geoTargetConstants/2048"
+      },
+      {
+        "country": "Djibouti",
+        "resourceName": "geoTargetConstants/2262"
+      },
+      {
+        "country": "Comoros",
+        "resourceName": "geoTargetConstants/2174"
+      }
+    ],
+    "geoTargetConstants": [
+      "geoTargetConstants/2818",
+      "geoTargetConstants/2012",
+      "geoTargetConstants/2736",
+      "geoTargetConstants/2728",
+      "geoTargetConstants/2368",
+      "geoTargetConstants/2504",
+      "geoTargetConstants/2682",
+      "geoTargetConstants/2887",
+      "geoTargetConstants/2148",
+      "geoTargetConstants/2706",
+      "geoTargetConstants/2788",
+      "geoTargetConstants/2400",
+      "geoTargetConstants/2784",
+      "geoTargetConstants/2376",
+      "geoTargetConstants/2434",
+      "geoTargetConstants/2422",
+      "geoTargetConstants/2232",
+      "geoTargetConstants/2512",
+      "geoTargetConstants/2478",
+      "geoTargetConstants/2414",
+      "geoTargetConstants/2634",
+      "geoTargetConstants/2048",
+      "geoTargetConstants/2262",
+      "geoTargetConstants/2174"
+    ]
+  },
+  "bn": {
+    "locale": "bn",
+    "lang": "Bengali",
+    "criterionId": 1056,
+    "suggestions": [
+      {
+        "country": "Bangladesh",
+        "resourceName": "geoTargetConstants/2050"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2050"]
+  },
+  "bg": {
+    "locale": "bg",
+    "lang": "Bulgarian",
+    "criterionId": 1020,
+    "suggestions": [
+      {
+        "country": "Bulgaria",
+        "resourceName": "geoTargetConstants/2100"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2100"]
+  },
+  "ca": {
+    "locale": "ca",
+    "lang": "Catalan",
+    "criterionId": 1038,
+    "suggestions": [
+      {
+        "country": "Andorra",
+        "resourceName": "geoTargetConstants/2020"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2020"]
+  },
+  "zh": {
+    "locale": "zh",
+    "lang": "Chinese",
+    "criterionId": 1017,
+    "suggestions": [
+      {
+        "country": "China",
+        "resourceName": "geoTargetConstants/2156"
+      },
+      {
+        "country": "Singapore",
+        "resourceName": "geoTargetConstants/2702"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2156", "geoTargetConstants/2702"]
+  },
+  "hr": {
+    "locale": "hr",
+    "lang": "Croatian",
+    "criterionId": 1039,
+    "suggestions": [
+      {
+        "country": "Croatia",
+        "resourceName": "geoTargetConstants/2191"
+      },
+      {
+        "country": "Bosnia and Herzegovina",
+        "resourceName": "geoTargetConstants/2070"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2191", "geoTargetConstants/2070"]
+  },
+  "cs": {
+    "locale": "cs",
+    "lang": "Czech",
+    "criterionId": 1021,
+    "suggestions": [
+      {
+        "country": "Czechia",
+        "resourceName": "geoTargetConstants/2203"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2203"]
+  },
+  "da": {
+    "locale": "da",
+    "lang": "Danish",
+    "criterionId": 1009,
+    "suggestions": [
+      {
+        "country": "Denmark",
+        "resourceName": "geoTargetConstants/2208"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2208"]
+  },
+  "nl": {
+    "locale": "nl",
+    "lang": "Dutch",
+    "criterionId": 1010,
+    "suggestions": [
+      {
+        "country": "Netherlands",
+        "resourceName": "geoTargetConstants/2528"
+      },
+      {
+        "country": "Caribbean Netherlands",
+        "resourceName": "geoTargetConstants/2535"
+      },
+      {
+        "country": "Belgium",
+        "resourceName": "geoTargetConstants/2056"
+      },
+      {
+        "country": "Suriname",
+        "resourceName": "geoTargetConstants/2740"
+      },
+      {
+        "country": "Curacao",
+        "resourceName": "geoTargetConstants/2531"
+      },
+      {
+        "country": "Sint Maarten",
+        "resourceName": "geoTargetConstants/2534"
+      },
+      {
+        "country": "Saint Martin",
+        "resourceName": "geoTargetConstants/2663"
+      }
+    ],
+    "geoTargetConstants": [
+      "geoTargetConstants/2528",
+      "geoTargetConstants/2535",
+      "geoTargetConstants/2056",
+      "geoTargetConstants/2740",
+      "geoTargetConstants/2531",
+      "geoTargetConstants/2534",
+      "geoTargetConstants/2663"
+    ]
+  },
+  "en": {
+    "locale": "en",
+    "lang": "English",
+    "criterionId": 1000,
+    "suggestions": [
+      {
+        "country": "India",
+        "resourceName": "geoTargetConstants/2356"
+      },
+      {
+        "country": "United States",
+        "resourceName": "geoTargetConstants/2840"
+      },
+      {
+        "country": "United States Minor Outlying Islands",
+        "resourceName": "geoTargetConstants/2581"
+      },
+      {
+        "country": "Pakistan",
+        "resourceName": "geoTargetConstants/2586"
+      },
+      {
+        "country": "Nigeria",
+        "resourceName": "geoTargetConstants/2566"
+      },
+      {
+        "country": "Philippines",
+        "resourceName": "geoTargetConstants/2608"
+      },
+      {
+        "country": "United Kingdom",
+        "resourceName": "geoTargetConstants/2826"
+      },
+      {
+        "country": "Tanzania",
+        "resourceName": "geoTargetConstants/2834"
+      },
+      {
+        "country": "Ghana",
+        "resourceName": "geoTargetConstants/2288"
+      },
+      {
+        "country": "South Africa",
+        "resourceName": "geoTargetConstants/2710"
+      },
+      {
+        "country": "Kenya",
+        "resourceName": "geoTargetConstants/2404"
+      },
+      {
+        "country": "Uganda",
+        "resourceName": "geoTargetConstants/2800"
+      },
+      {
+        "country": "Sudan",
+        "resourceName": "geoTargetConstants/2736"
+      },
+      {
+        "country": "South Sudan",
+        "resourceName": "geoTargetConstants/2728"
+      },
+      {
+        "country": "Canada",
+        "resourceName": "geoTargetConstants/2124"
+      },
+      {
+        "country": "Malaysia",
+        "resourceName": "geoTargetConstants/2458"
+      },
+      {
+        "country": "Cameroon",
+        "resourceName": "geoTargetConstants/2120"
+      },
+      {
+        "country": "Australia",
+        "resourceName": "geoTargetConstants/2036"
+      },
+      {
+        "country": "Malawi",
+        "resourceName": "geoTargetConstants/2454"
+      },
+      {
+        "country": "Zambia",
+        "resourceName": "geoTargetConstants/2894"
+      },
+      {
+        "country": "Zimbabwe",
+        "resourceName": "geoTargetConstants/2716"
+      },
+      {
+        "country": "Cote d'Ivoire",
+        "resourceName": "geoTargetConstants/2384"
+      },
+      {
+        "country": "Rwanda",
+        "resourceName": "geoTargetConstants/2646"
+      },
+      {
+        "country": "Papua New Guinea",
+        "resourceName": "geoTargetConstants/2598"
+      },
+      {
+        "country": "Sierra Leone",
+        "resourceName": "geoTargetConstants/2694"
+      },
+      {
+        "country": "Singapore",
+        "resourceName": "geoTargetConstants/2702"
+      }
+    ],
+    "geoTargetConstants": [
+      "geoTargetConstants/2356",
+      "geoTargetConstants/2840",
+      "geoTargetConstants/2581",
+      "geoTargetConstants/2586",
+      "geoTargetConstants/2566",
+      "geoTargetConstants/2608",
+      "geoTargetConstants/2826",
+      "geoTargetConstants/2834",
+      "geoTargetConstants/2288",
+      "geoTargetConstants/2710",
+      "geoTargetConstants/2404",
+      "geoTargetConstants/2800",
+      "geoTargetConstants/2736",
+      "geoTargetConstants/2728",
+      "geoTargetConstants/2124",
+      "geoTargetConstants/2458",
+      "geoTargetConstants/2120",
+      "geoTargetConstants/2036",
+      "geoTargetConstants/2454",
+      "geoTargetConstants/2894",
+      "geoTargetConstants/2716",
+      "geoTargetConstants/2384",
+      "geoTargetConstants/2646",
+      "geoTargetConstants/2598",
+      "geoTargetConstants/2694",
+      "geoTargetConstants/2702"
+    ]
+  },
+  "et": {
+    "locale": "et",
+    "lang": "Estonian",
+    "criterionId": 1043,
+    "suggestions": [
+      {
+        "country": "Estonia",
+        "resourceName": "geoTargetConstants/2233"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2233"]
+  },
+  "tl": {
+    "locale": "tl",
+    "lang": "Filipino",
+    "criterionId": 1042,
+    "suggestions": [
+      {
+        "country": "Philippines",
+        "resourceName": "geoTargetConstants/2608"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2608"]
+  },
+  "fi": {
+    "locale": "fi",
+    "lang": "Finnish",
+    "criterionId": 1011,
+    "suggestions": [
+      {
+        "country": "Finland",
+        "resourceName": "geoTargetConstants/2246"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2246"]
+  },
+  "fr": {
+    "locale": "fr",
+    "lang": "French",
+    "criterionId": 1002,
+    "suggestions": [
+      {
+        "country": "Democratic Republic of the Congo",
+        "resourceName": "geoTargetConstants/2180"
+      },
+      {
+        "country": "France",
+        "resourceName": "geoTargetConstants/2250"
+      },
+      {
+        "country": "Canada",
+        "resourceName": "geoTargetConstants/2124"
+      },
+      {
+        "country": "Madagascar",
+        "resourceName": "geoTargetConstants/2450"
+      },
+      {
+        "country": "Cameroon",
+        "resourceName": "geoTargetConstants/2120"
+      },
+      {
+        "country": "Cote d'Ivoire",
+        "resourceName": "geoTargetConstants/2384"
+      },
+      {
+        "country": "Nigeria",
+        "resourceName": "geoTargetConstants/2566"
+      },
+      {
+        "country": "Niger",
+        "resourceName": "geoTargetConstants/2562"
+      },
+      {
+        "country": "Burkina Faso",
+        "resourceName": "geoTargetConstants/2854"
+      },
+      {
+        "country": "Mali",
+        "resourceName": "geoTargetConstants/2466"
+      },
+      {
+        "country": "Senegal",
+        "resourceName": "geoTargetConstants/2686"
+      },
+      {
+        "country": "Chad",
+        "resourceName": "geoTargetConstants/2148"
+      },
+      {
+        "country": "Guinea",
+        "resourceName": "geoTargetConstants/2324"
+      },
+      {
+        "country": "Equatorial Guinea",
+        "resourceName": "geoTargetConstants/2226"
+      },
+      {
+        "country": "Guinea-Bissau",
+        "resourceName": "geoTargetConstants/2624"
+      },
+      {
+        "country": "Papua New Guinea",
+        "resourceName": "geoTargetConstants/2598"
+      },
+      {
+        "country": "Rwanda",
+        "resourceName": "geoTargetConstants/2646"
+      },
+      {
+        "country": "Benin",
+        "resourceName": "geoTargetConstants/2204"
+      },
+      {
+        "country": "Burundi",
+        "resourceName": "geoTargetConstants/2108"
+      },
+      {
+        "country": "Belgium",
+        "resourceName": "geoTargetConstants/2056"
+      },
+      {
+        "country": "Haiti",
+        "resourceName": "geoTargetConstants/2332"
+      },
+      {
+        "country": "Switzerland",
+        "resourceName": "geoTargetConstants/2756"
+      },
+      {
+        "country": "Togo",
+        "resourceName": "geoTargetConstants/2768"
+      },
+      {
+        "country": "Republic of the Congo",
+        "resourceName": "geoTargetConstants/2178"
+      },
+      {
+        "country": "Central African Republic",
+        "resourceName": "geoTargetConstants/2140"
+      },
+      {
+        "country": "Gabon",
+        "resourceName": "geoTargetConstants/2266"
+      },
+      {
+        "country": "Mauritius",
+        "resourceName": "geoTargetConstants/2480"
+      }
+    ],
+    "geoTargetConstants": [
+      "geoTargetConstants/2180",
+      "geoTargetConstants/2250",
+      "geoTargetConstants/2124",
+      "geoTargetConstants/2450",
+      "geoTargetConstants/2120",
+      "geoTargetConstants/2384",
+      "geoTargetConstants/2566",
+      "geoTargetConstants/2562",
+      "geoTargetConstants/2854",
+      "geoTargetConstants/2466",
+      "geoTargetConstants/2686",
+      "geoTargetConstants/2148",
+      "geoTargetConstants/2324",
+      "geoTargetConstants/2226",
+      "geoTargetConstants/2624",
+      "geoTargetConstants/2598",
+      "geoTargetConstants/2646",
+      "geoTargetConstants/2204",
+      "geoTargetConstants/2108",
+      "geoTargetConstants/2056",
+      "geoTargetConstants/2332",
+      "geoTargetConstants/2756",
+      "geoTargetConstants/2768",
+      "geoTargetConstants/2178",
+      "geoTargetConstants/2140",
+      "geoTargetConstants/2266",
+      "geoTargetConstants/2480"
+    ]
+  },
+  "de": {
+    "locale": "de",
+    "lang": "German",
+    "criterionId": 1001,
+    "suggestions": [
+      {
+        "country": "Germany",
+        "resourceName": "geoTargetConstants/2276"
+      },
+      {
+        "country": "Belgium",
+        "resourceName": "geoTargetConstants/2056"
+      },
+      {
+        "country": "Austria",
+        "resourceName": "geoTargetConstants/2040"
+      },
+      {
+        "country": "Namibia",
+        "resourceName": "geoTargetConstants/2516"
+      },
+      {
+        "country": "Luxembourg",
+        "resourceName": "geoTargetConstants/2442"
+      },
+      {
+        "country": "Liechtenstein",
+        "resourceName": "geoTargetConstants/2438"
+      }
+    ],
+    "geoTargetConstants": [
+      "geoTargetConstants/2276",
+      "geoTargetConstants/2056",
+      "geoTargetConstants/2040",
+      "geoTargetConstants/2516",
+      "geoTargetConstants/2442",
+      "geoTargetConstants/2438"
+    ]
+  },
+  "el": {
+    "locale": "el",
+    "lang": "Greek",
+    "criterionId": 1022,
+    "suggestions": [
+      {
+        "country": "Greece",
+        "resourceName": "geoTargetConstants/2300"
+      },
+      {
+        "country": "Cyprus",
+        "resourceName": "geoTargetConstants/2196"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2300", "geoTargetConstants/2196"]
+  },
+  "iw": {
+    "locale": "iw",
+    "lang": "Hebrew",
+    "criterionId": 1027,
+    "suggestions": [
+      {
+        "country": "Israel",
+        "resourceName": "geoTargetConstants/2376"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2376"]
+  },
+  "hi": {
+    "locale": "hi",
+    "lang": "Hindi",
+    "criterionId": 1023,
+    "suggestions": [
+      {
+        "country": "India",
+        "resourceName": "geoTargetConstants/2356"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2356"]
+  },
+  "hu": {
+    "locale": "hu",
+    "lang": "Hungarian",
+    "criterionId": 1024,
+    "suggestions": [
+      {
+        "country": "Hungary",
+        "resourceName": "geoTargetConstants/2348"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2348"]
+  },
+  "is": {
+    "locale": "is",
+    "lang": "Icelandic",
+    "criterionId": 1026,
+    "suggestions": [
+      {
+        "country": "Iceland",
+        "resourceName": "geoTargetConstants/2352"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2352"]
+  },
+  "id": {
+    "locale": "id",
+    "lang": "Indonesian",
+    "criterionId": 1025,
+    "suggestions": [
+      {
+        "country": "Indonesia",
+        "resourceName": "geoTargetConstants/2360"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2360"]
+  },
+  "it": {
+    "locale": "it",
+    "lang": "Italian",
+    "criterionId": 1004,
+    "suggestions": [
+      {
+        "country": "Italy",
+        "resourceName": "geoTargetConstants/2380"
+      },
+      {
+        "country": "Switzerland",
+        "resourceName": "geoTargetConstants/2756"
+      },
+      {
+        "country": "San Marino",
+        "resourceName": "geoTargetConstants/2674"
+      },
+      {
+        "country": "Vatican City",
+        "resourceName": "geoTargetConstants/2336"
+      }
+    ],
+    "geoTargetConstants": [
+      "geoTargetConstants/2380",
+      "geoTargetConstants/2756",
+      "geoTargetConstants/2674",
+      "geoTargetConstants/2336"
+    ]
+  },
+  "ja": {
+    "locale": "ja",
+    "lang": "Japanese",
+    "criterionId": 1005,
+    "suggestions": [
+      {
+        "country": "Japan",
+        "resourceName": "geoTargetConstants/2392"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2392"]
+  },
+  "ko": {
+    "locale": "ko",
+    "lang": "Korean",
+    "criterionId": 1012,
+    "suggestions": [
+      {
+        "country": "South Korea",
+        "resourceName": "geoTargetConstants/2410"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2410"]
+  },
+  "lv": {
+    "locale": "lv",
+    "lang": "Latvian",
+    "criterionId": 1028,
+    "suggestions": [
+      {
+        "country": "Latvia",
+        "resourceName": "geoTargetConstants/2428"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2428"]
+  },
+  "lt": {
+    "locale": "lt",
+    "lang": "Lithuanian",
+    "criterionId": 1029,
+    "suggestions": [
+      {
+        "country": "Lithuania",
+        "resourceName": "geoTargetConstants/2440"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2440"]
+  },
+  "ms": {
+    "locale": "ms",
+    "lang": "Malay",
+    "criterionId": 1102,
+    "suggestions": [
+      {
+        "country": "Malaysia",
+        "resourceName": "geoTargetConstants/2458"
+      },
+      {
+        "country": "Singapore",
+        "resourceName": "geoTargetConstants/2702"
+      },
+      {
+        "country": "Brunei",
+        "resourceName": "geoTargetConstants/2096"
+      }
+    ],
+    "geoTargetConstants": [
+      "geoTargetConstants/2458",
+      "geoTargetConstants/2702",
+      "geoTargetConstants/2096"
+    ]
+  },
+  "no": {
+    "locale": "no",
+    "lang": "Norwegian",
+    "criterionId": 1013,
+    "suggestions": [],
+    "geoTargetConstants": []
+  },
+  "pl": {
+    "locale": "pl",
+    "lang": "Polish",
+    "criterionId": 1030,
+    "suggestions": [
+      {
+        "country": "Poland",
+        "resourceName": "geoTargetConstants/2616"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2616"]
+  },
+  "pt": {
+    "locale": "pt",
+    "lang": "Portuguese",
+    "criterionId": 1014,
+    "suggestions": [
+      {
+        "country": "Brazil",
+        "resourceName": "geoTargetConstants/2076"
+      },
+      {
+        "country": "Angola",
+        "resourceName": "geoTargetConstants/2024"
+      },
+      {
+        "country": "Mozambique",
+        "resourceName": "geoTargetConstants/2508"
+      },
+      {
+        "country": "Portugal",
+        "resourceName": "geoTargetConstants/2620"
+      },
+      {
+        "country": "Guinea-Bissau",
+        "resourceName": "geoTargetConstants/2624"
+      },
+      {
+        "country": "Equatorial Guinea",
+        "resourceName": "geoTargetConstants/2226"
+      },
+      {
+        "country": "Timor-Leste",
+        "resourceName": "geoTargetConstants/2626"
+      },
+      {
+        "country": "Cabo Verde",
+        "resourceName": "geoTargetConstants/2132"
+      },
+      {
+        "country": "Sao Tome and Principe",
+        "resourceName": "geoTargetConstants/2678"
+      }
+    ],
+    "geoTargetConstants": [
+      "geoTargetConstants/2076",
+      "geoTargetConstants/2024",
+      "geoTargetConstants/2508",
+      "geoTargetConstants/2620",
+      "geoTargetConstants/2624",
+      "geoTargetConstants/2226",
+      "geoTargetConstants/2626",
+      "geoTargetConstants/2132",
+      "geoTargetConstants/2678"
+    ]
+  },
+  "ro": {
+    "locale": "ro",
+    "lang": "Romanian",
+    "criterionId": 1032,
+    "suggestions": [
+      {
+        "country": "Romania",
+        "resourceName": "geoTargetConstants/2642"
+      },
+      {
+        "country": "Moldova",
+        "resourceName": "geoTargetConstants/2498"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2642", "geoTargetConstants/2498"]
+  },
+  "ru": {
+    "locale": "ru",
+    "lang": "Russian",
+    "criterionId": 1031,
+    "suggestions": [
+      {
+        "country": "Russia",
+        "resourceName": "geoTargetConstants/2643"
+      },
+      {
+        "country": "Uzbekistan",
+        "resourceName": "geoTargetConstants/2860"
+      },
+      {
+        "country": "Kazakhstan",
+        "resourceName": "geoTargetConstants/2398"
+      },
+      {
+        "country": "Tajikistan",
+        "resourceName": "geoTargetConstants/2762"
+      },
+      {
+        "country": "Belarus",
+        "resourceName": "geoTargetConstants/2112"
+      },
+      {
+        "country": "Kyrgyzstan",
+        "resourceName": "geoTargetConstants/2417"
+      },
+      {
+        "country": "Turkmenistan",
+        "resourceName": "geoTargetConstants/2795"
+      }
+    ],
+    "geoTargetConstants": [
+      "geoTargetConstants/2643",
+      "geoTargetConstants/2860",
+      "geoTargetConstants/2398",
+      "geoTargetConstants/2762",
+      "geoTargetConstants/2112",
+      "geoTargetConstants/2417",
+      "geoTargetConstants/2795"
+    ]
+  },
+  "sr": {
+    "locale": "sr",
+    "lang": "Serbian",
+    "criterionId": 1035,
+    "suggestions": [
+      {
+        "country": "Serbia",
+        "resourceName": "geoTargetConstants/2688"
+      },
+      {
+        "country": "Bosnia and Herzegovina",
+        "resourceName": "geoTargetConstants/2070"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2688", "geoTargetConstants/2070"]
+  },
+  "sk": {
+    "locale": "sk",
+    "lang": "Slovak",
+    "criterionId": 1033,
+    "suggestions": [
+      {
+        "country": "Czechia",
+        "resourceName": "geoTargetConstants/2203"
+      },
+      {
+        "country": "Slovakia",
+        "resourceName": "geoTargetConstants/2703"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2203", "geoTargetConstants/2703"]
+  },
+  "sl": {
+    "locale": "sl",
+    "lang": "Slovenian",
+    "criterionId": 1034,
+    "suggestions": [
+      {
+        "country": "Slovenia",
+        "resourceName": "geoTargetConstants/2705"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2705"]
+  },
+  "es": {
+    "locale": "es",
+    "lang": "Spanish",
+    "criterionId": 1003,
+    "suggestions": [
+      {
+        "country": "Mexico",
+        "resourceName": "geoTargetConstants/2484"
+      },
+      {
+        "country": "Colombia",
+        "resourceName": "geoTargetConstants/2170"
+      },
+      {
+        "country": "Spain",
+        "resourceName": "geoTargetConstants/2724"
+      },
+      {
+        "country": "Argentina",
+        "resourceName": "geoTargetConstants/2032"
+      },
+      {
+        "country": "Peru",
+        "resourceName": "geoTargetConstants/2604"
+      },
+      {
+        "country": "Venezuela",
+        "resourceName": "geoTargetConstants/2862"
+      },
+      {
+        "country": "Chile",
+        "resourceName": "geoTargetConstants/2152"
+      },
+      {
+        "country": "Ecuador",
+        "resourceName": "geoTargetConstants/2218"
+      },
+      {
+        "country": "Guatemala",
+        "resourceName": "geoTargetConstants/2320"
+      },
+      {
+        "country": "Bolivia",
+        "resourceName": "geoTargetConstants/2068"
+      },
+      {
+        "country": "Dominican Republic",
+        "resourceName": "geoTargetConstants/2214"
+      },
+      {
+        "country": "Honduras",
+        "resourceName": "geoTargetConstants/2340"
+      },
+      {
+        "country": "Paraguay",
+        "resourceName": "geoTargetConstants/2600"
+      },
+      {
+        "country": "Nicaragua",
+        "resourceName": "geoTargetConstants/2558"
+      },
+      {
+        "country": "El Salvador",
+        "resourceName": "geoTargetConstants/2222"
+      },
+      {
+        "country": "Costa Rica",
+        "resourceName": "geoTargetConstants/2188"
+      },
+      {
+        "country": "Panama",
+        "resourceName": "geoTargetConstants/2591"
+      },
+      {
+        "country": "Uruguay",
+        "resourceName": "geoTargetConstants/2858"
+      },
+      {
+        "country": "Equatorial Guinea",
+        "resourceName": "geoTargetConstants/2226"
+      },
+      {
+        "country": "Belize",
+        "resourceName": "geoTargetConstants/2084"
+      },
+      {
+        "country": "Guam",
+        "resourceName": "geoTargetConstants/2316"
+      }
+    ],
+    "geoTargetConstants": [
+      "geoTargetConstants/2484",
+      "geoTargetConstants/2170",
+      "geoTargetConstants/2724",
+      "geoTargetConstants/2032",
+      "geoTargetConstants/2604",
+      "geoTargetConstants/2862",
+      "geoTargetConstants/2152",
+      "geoTargetConstants/2218",
+      "geoTargetConstants/2320",
+      "geoTargetConstants/2068",
+      "geoTargetConstants/2214",
+      "geoTargetConstants/2340",
+      "geoTargetConstants/2600",
+      "geoTargetConstants/2558",
+      "geoTargetConstants/2222",
+      "geoTargetConstants/2188",
+      "geoTargetConstants/2591",
+      "geoTargetConstants/2858",
+      "geoTargetConstants/2226",
+      "geoTargetConstants/2084",
+      "geoTargetConstants/2316"
+    ]
+  },
+  "sv": {
+    "locale": "sv",
+    "lang": "Swedish",
+    "criterionId": 1015,
+    "suggestions": [
+      {
+        "country": "Sweden",
+        "resourceName": "geoTargetConstants/2752"
+      },
+      {
+        "country": "Finland",
+        "resourceName": "geoTargetConstants/2246"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2752", "geoTargetConstants/2246"]
+  },
+  "ta": {
+    "locale": "ta",
+    "lang": "Tamil",
+    "criterionId": 1130,
+    "suggestions": [
+      {
+        "country": "India",
+        "resourceName": "geoTargetConstants/2356"
+      },
+      {
+        "country": "Sri Lanka",
+        "resourceName": "geoTargetConstants/2144"
+      },
+      {
+        "country": "Singapore",
+        "resourceName": "geoTargetConstants/2702"
+      }
+    ],
+    "geoTargetConstants": [
+      "geoTargetConstants/2356",
+      "geoTargetConstants/2144",
+      "geoTargetConstants/2702"
+    ]
+  },
+  "th": {
+    "locale": "th",
+    "lang": "Thai",
+    "criterionId": 1044,
+    "suggestions": [
+      {
+        "country": "Thailand",
+        "resourceName": "geoTargetConstants/2764"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2764"]
+  },
+  "tr": {
+    "locale": "tr",
+    "lang": "Turkish",
+    "criterionId": 1037,
+    "suggestions": [
+      {
+        "country": "Turkiye",
+        "resourceName": "geoTargetConstants/2792"
+      },
+      {
+        "country": "Cyprus",
+        "resourceName": "geoTargetConstants/2196"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2792", "geoTargetConstants/2196"]
+  },
+  "uk": {
+    "locale": "uk",
+    "lang": "Ukrainian",
+    "criterionId": 1036,
+    "suggestions": [
+      {
+        "country": "Ukraine",
+        "resourceName": "geoTargetConstants/2804"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2804"]
+  },
+  "ur": {
+    "locale": "ur",
+    "lang": "Urdu",
+    "criterionId": 1041,
+    "suggestions": [
+      {
+        "country": "Pakistan",
+        "resourceName": "geoTargetConstants/2586"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2586"]
+  },
+  "vi": {
+    "locale": "vi",
+    "lang": "Vietnamese",
+    "criterionId": 1040,
+    "suggestions": [
+      {
+        "country": "Vietnam",
+        "resourceName": "geoTargetConstants/2704"
+      }
+    ],
+    "geoTargetConstants": ["geoTargetConstants/2704"]
+  }
+}
