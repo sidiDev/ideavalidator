@@ -43,9 +43,9 @@ export default function Dashboard() {
     // await complete(ideaDescription);
     await getDomains({ ideaDescription, setDomainList });
 
-    // axios.get("http://www.reddit.com/search.json?q=saas").then((res) => {
-    //     console.log(res.data);
-    //   });
+    axios.get("http://www.reddit.com/search.json?q=saas").then((res) => {
+      console.log(res.data);
+    });
   }
 
   useEffect(() => {
