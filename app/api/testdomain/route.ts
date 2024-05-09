@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { env } from "process";
 import xmljs from "xml-js";
 import requestIp from "request-ip";
+import { NextApiRequest } from "next";
 
 // For getting your IP address: https://ip.web-hosting.com
 
@@ -12,7 +13,7 @@ const USERNAME_NAMECHEAP = process.env.USERNAME_NAMECHEAP;
 const CLIENT_IP_NAMECHEAP = process.env.CLIENT_IP_NAMECHEAP;
 
 // Handler for POST requests
-export async function GET(request: Request) {
+export async function GET(request: NextApiRequest) {
   // Configuring options for XML parsing
   const options = {
     compact: true,
