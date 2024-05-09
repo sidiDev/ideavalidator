@@ -44,9 +44,7 @@ export async function GET(request: Request) {
 
   // Making request to Namecheap API to check domain availability
   const { data } = await axios.get(
-    `${url}?ApiUser=${USERNAME_NAMECHEAP}&ApiKey=${API_KEY_NAMECHEAP}&UserName=${USERNAME_NAMECHEAP}&ClientIp=${await getFixieIp(
-      new URL(process.env.FIXIE_URL as any)
-    )}&Command=namecheap.domains.check&DomainList=laravelsdf.co`
+    `${url}?ApiUser=${USERNAME_NAMECHEAP}&ApiKey=${API_KEY_NAMECHEAP}&UserName=${USERNAME_NAMECHEAP}&ClientIp=52.5.155.132&Command=namecheap.domains.check&DomainList=laravelsdf.co`
   );
 
   // Parsing XML response to JSON
@@ -54,7 +52,6 @@ export async function GET(request: Request) {
 
   // Returning JSON response
   return NextResponse.json({
-    ip: await getFixieIp(new URL(process.env.FIXIE_URL as any)),
     response: JSON.parse(json).ApiResponse,
   });
 }
