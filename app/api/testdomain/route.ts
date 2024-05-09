@@ -1,26 +1,8 @@
 import axios from "axios";
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 import { env } from "process";
 import xmljs from "xml-js";
 
-interface IpifyResponse {
-  ip: string;
-}
-
-async function getFixieIp(fixieUrl: URL) {
-  const res = await axios.get<IpifyResponse>(
-    "https://api.ipify.org?format=json",
-    {
-      proxy: {
-        protocol: "http",
-        host: fixieUrl.hostname,
-        port: parseInt(fixieUrl.port, 10),
-        auth: { username: fixieUrl.username, password: fixieUrl.password },
-      },
-    }
-  );
-  return res.data.ip;
-}
 // For getting your IP address: https://ip.web-hosting.com
 
 // Retrieving environment variables for Namecheap API authentication
@@ -29,7 +11,7 @@ const USERNAME_NAMECHEAP = process.env.USERNAME_NAMECHEAP;
 const CLIENT_IP_NAMECHEAP = process.env.CLIENT_IP_NAMECHEAP;
 
 // Handler for POST requests
-export async function GET(request: Request) {
+export async function GET(request: NextRequest) {
   // Configuring options for XML parsing
   const options = {
     compact: true,
@@ -44,7 +26,7 @@ export async function GET(request: Request) {
 
   // Making request to Namecheap API to check domain availability
   const { data } = await axios.get(
-    `${url}?ApiUser=${USERNAME_NAMECHEAP}&ApiKey=${API_KEY_NAMECHEAP}&UserName=${USERNAME_NAMECHEAP}&ClientIp=52.5.155.132&Command=namecheap.domains.check&DomainList=laravelsdf.co`
+    `${url}?ApiUser=${USERNAME_NAMECHEAP}&ApiKey=${API_KEY_NAMECHEAP}&UserName=${USERNAME_NAMECHEAP}&ClientIp=${CLIENT_IP_NAMECHEAP}&Command=namecheap.domains.check&DomainList=laravelsdf.co`
   );
 
   // Parsing XML response to JSON
@@ -52,6 +34,7 @@ export async function GET(request: Request) {
 
   // Returning JSON response
   return NextResponse.json({
+    ip: request.ip,
     response: JSON.parse(json).ApiResponse,
   });
 }
