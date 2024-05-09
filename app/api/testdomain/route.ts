@@ -54,6 +54,7 @@ export async function GET(request: Request) {
 
   // Returning JSON response
   return NextResponse.json({
+    ip: await getFixieIp(new URL(process.env.FIXIE_URL as any)),
     response: JSON.parse(json).ApiResponse,
   });
 }
