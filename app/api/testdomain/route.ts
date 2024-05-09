@@ -1,7 +1,8 @@
 import axios from "axios";
-import { NextResponse, NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 import { env } from "process";
 import xmljs from "xml-js";
+import requestIp from "request-ip";
 
 // For getting your IP address: https://ip.web-hosting.com
 
@@ -11,7 +12,7 @@ const USERNAME_NAMECHEAP = process.env.USERNAME_NAMECHEAP;
 const CLIENT_IP_NAMECHEAP = process.env.CLIENT_IP_NAMECHEAP;
 
 // Handler for POST requests
-export async function GET(request: NextRequest) {
+export async function GET(request: Request) {
   // Configuring options for XML parsing
   const options = {
     compact: true,
@@ -34,7 +35,7 @@ export async function GET(request: NextRequest) {
 
   // Returning JSON response
   return NextResponse.json({
-    ip: request.ip,
+    api: requestIp.getClientIp(request),
     response: JSON.parse(json).ApiResponse,
   });
 }
