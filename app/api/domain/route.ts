@@ -59,11 +59,13 @@ export async function POST(request: Request) {
       : "https://api.namecheap.com/xml.response";
 
   // Making request to Namecheap API to check domain availability
-  const { data } = await axios.get(
-    `${url}?ApiUser=${USERNAME_NAMECHEAP}&ApiKey=${API_KEY_NAMECHEAP}&UserName=${USERNAME_NAMECHEAP}&ClientIp=${CLIENT_IP_NAMECHEAP}&Command=namecheap.domains.check&DomainList=${JSON.parse(
-      response.choices[0].message.content as string
-    ).join(",")}`
-  );
+  const ApiUrl =
+    process.env.NODE_ENV == "development"
+      ? "http://localhost:8000"
+      : "https://ideavalidator.onrender.com";
+  const { data } = await axios.post(`${ApiUrl}/domain`, {
+    domain: JSON.parse(response.choices[0].message.content as string).join(","),
+  });
 
   // Parsing XML response to JSON
   const json = xmljs.xml2json(data, options);
