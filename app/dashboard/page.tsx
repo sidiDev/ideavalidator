@@ -7,6 +7,7 @@ import {
   KeywordType,
   getDomains,
   getKeywordStats,
+  getRedditRelatedPosts,
   getTopCompetitors,
 } from "@/methods";
 import axios from "axios";
@@ -14,11 +15,12 @@ import { FormEvent, useEffect, useState } from "react";
 import { useCompletion } from "ai/react";
 import KeywordSearchCard from "@/components/ui/KeywordSearchCard";
 import TopCompetitors from "@/components/ui/TopCompetitors";
+import RedditRelatedPosts, {
+  RedditRelatedPostDataType,
+} from "@/components/ui/RedditRelatedPosts";
 
 export default function Dashboard() {
-  const [ideaDescription, setIdeaDescription] = useState<string>(
-    "A directory for all Lifetime deals SaaS products"
-  );
+  const [ideaDescription, setIdeaDescription] = useState<string>("");
   const [isLoading, setLoading] = useState<boolean>(false);
   const [keywords, setKeywords] = useState<{
     keywords: KeywordType[];
@@ -26,6 +28,9 @@ export default function Dashboard() {
   }>({ keywords: [], keyword: "" });
   const [domainList, setDomainList] = useState<DomainCardType[]>([]);
   const [topCompetitors, setCompetitors] = useState<CompetitorsType[]>([]);
+  const [redditRelatedPosts, setRedditRelatedPosts] = useState<
+    RedditRelatedPostDataType[]
+  >([]);
 
   const {
     completion,
@@ -42,10 +47,7 @@ export default function Dashboard() {
     await getTopCompetitors({ ideaDescription, setCompetitors });
     // await complete(ideaDescription);
     await getDomains({ ideaDescription, setDomainList });
-
-    axios.get("https://www.reddit.com/search.json?q=saas").then((res) => {
-      console.log(res.data);
-    });
+    await getRedditRelatedPosts({ ideaDescription, setRedditRelatedPosts });
   }
 
   useEffect(() => {
@@ -71,6 +73,7 @@ export default function Dashboard() {
           <DomainsList list={domainList} />
         </div>
         <TopCompetitors list={topCompetitors} />
+        <RedditRelatedPosts list={redditRelatedPosts} />
       </div>
     </>
   );

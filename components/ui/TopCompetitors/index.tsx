@@ -2,7 +2,7 @@ import { CompetitorsType } from "@/methods";
 import Heading from "../Heading";
 import Card from "./Card";
 
-export default ({ list }: { list: CompetitorsType[] }) => {
+export default function TopCompetitors({ list }: { list: CompetitorsType[] }) {
   return list.length > 0 ? (
     <div>
       <Heading className="text-lg font-semibold flex items-center gap-x-3">
@@ -22,4 +22,4 @@ export default ({ list }: { list: CompetitorsType[] }) => {
   ) : (
     <></>
   );
-};
+}

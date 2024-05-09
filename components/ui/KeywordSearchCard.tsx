@@ -52,8 +52,7 @@ export default function KeywordSearchCard({
   return keyword ? (
     <>
       <Heading>
-        Monthly search for:{" "}
-        <span className="inline-block text-neutral-600">{keyword}</span>
+        Monthly search for: <span className="text-neutral-600">{keyword}</span>
       </Heading>
       <BarChart
         className="mt-6"

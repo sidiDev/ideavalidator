@@ -20,7 +20,7 @@ export async function POST(request: Request) {
   // Extracting idea description from request body
   const { ideaDescription } = await request.json();
 
-  // Generating response using GROQ
+  // Generate a keyword based on the idea description
   const response = await groq.chat.completions.create({
     model: "mixtral-8x7b-32768",
     // llama-3-sonar-small-32k-online

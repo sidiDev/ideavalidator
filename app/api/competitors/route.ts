@@ -6,14 +6,9 @@ import { OpenAIStream, StreamingTextResponse } from "ai";
 
 // For getting your IP address: https://ip.web-hosting.com
 
-// Retrieving environment variables for Namecheap API authentication
-const API_KEY_NAMECHEAP = process.env.API_KEY_NAMECHEAP;
-const USERNAME_NAMECHEAP = process.env.USERNAME_NAMECHEAP;
-const CLIENT_IP_NAMECHEAP = process.env.CLIENT_IP_NAMECHEAP;
-
 // Create an OpenAI API client
-// but configure it to point to GROQ ai
-const groq = new OpenAI({
+// but configure it to point to perplexity ai
+const perplexity = new OpenAI({
   apiKey: process.env.PERPLEXITY_API_KEY || "",
   // PERPLEXITY_API_KEY
   baseURL: "https://api.perplexity.ai",
@@ -26,8 +21,8 @@ export async function POST(request: Request) {
   // Extracting idea description from request body
   const { ideaDescription } = await request.json();
 
-  // Generating response using GROQ
-  const response = await groq.chat.completions.create({
+  // Generating response using perplexity
+  const response = await perplexity.chat.completions.create({
     model: "llama-3-sonar-small-32k-chat",
     // llama-3-sonar-small-32k-online
     // mixtral-8x7b-32768

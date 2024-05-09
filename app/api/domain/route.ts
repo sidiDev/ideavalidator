@@ -37,7 +37,7 @@ export async function POST(request: Request) {
       {
         role: "system",
         content:
-          "You are a domain name provider. Generate 20 .com domains. And use this context to generate based on it. And always make sure to add a random character at the end of every name for example: sidi.com become sidiy.com or sidify.com but make it beautiful. Please do not include any additional details, introduction, or information in the beginning or at the end. And the domains generated should be in array. And every domain name must have a TLD at the end",
+          "You are a domain name provider. Generate 20 .com domains. And use this context to generate based on it. And always make sure to add a random character at the end of every name for example: sidi.com become sidiy.com or sidify.com but make it beautiful. Please do not include any additional details, introduction, or information in the beginning or at the end. And the domains generated should be in array. And every domain name must have a TLD at the end.",
       },
       {
         role: "user",
@@ -45,8 +45,6 @@ export async function POST(request: Request) {
       },
     ],
   });
-
-  console.log(response.choices[0].message.content);
 
   // Configuring options for XML parsing
   const options = {

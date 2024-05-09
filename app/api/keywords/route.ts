@@ -2,6 +2,7 @@ import axios from "axios";
 import { NextResponse } from "next/server";
 import { getGeoTargets, getToken } from "@/lib/serverUtils";
 
+// Define the structure of the input data
 type InputType = {
   keywordIdeaMetrics: {
     competition: string;
@@ -19,28 +20,24 @@ type InputType = {
   keywordAnnotations: Record<string, unknown>;
 };
 
+// Define the structure of the output data
 type OutputType = {
   metrics: {
-    c: string;
-    /*vol: {
-      m: number;
-      y: number;
-      s: number;
-    }[];*/
-    avgSearches: number;
-    cIx: number;
-    low: number;
-    high: number;
+    c: string; // Competition
+    avgSearches: number; // Average monthly searches
+    cIx: number; // Competition Index
+    low: number; // Low top-of-page bid in millionths of the currency unit
+    high: number; // High top-of-page bid in millionths of the currency unit
     g: {
-      m3: number;
-      m6: number;
-      m12: number;
+      m3: number; // Change in search volume over the last 3 months
+      m6: number; // Change in search volume over the last 6 months
+      m12: number; // Change in search volume over the last 12 months
     };
   };
-  text: string;
-  // annotations: Record<string, unknown>;
+  text: string; // Input text
 };
 
+// Function to calculate percentage change
 const getChange = (input: InputType, months: number) => {
   const calculateChange = (start: number, end: number) =>
     Math.round(((end - start) / start) * 100 * 100) / 100;
@@ -56,7 +53,9 @@ const getChange = (input: InputType, months: number) => {
   return calculateChange(parseInt(start || "0"), parseInt(end || "0"));
 };
 
+// Function to transform input data into shorter format
 function makeShorter(input: InputType): OutputType {
+  // Mapping of month names to their numeric representation
   const monthMapping: Record<string, number> = {
     JANUARY: 1,
     FEBRUARY: 2,
@@ -75,11 +74,6 @@ function makeShorter(input: InputType): OutputType {
   return {
     metrics: {
       c: input.keywordIdeaMetrics.competition,
-      /*vol: input.keywordIdeaMetrics.monthlySearchVolumes.map((msv) => ({
-        m: monthMapping[msv.month],
-        y: parseInt(msv.year),
-        s: parseInt(msv.monthlySearches),
-      })),*/
       avgSearches: parseInt(input.keywordIdeaMetrics.avgMonthlySearches),
       cIx: parseInt(input.keywordIdeaMetrics.competitionIndex),
       low:
@@ -95,13 +89,14 @@ function makeShorter(input: InputType): OutputType {
       },
     },
     text: input.text,
-    // annotations: input.keywordAnnotations,
   };
 }
 
+// Function to handle POST requests
 export async function POST(req: Request) {
   const { site, url, k, lang } = await req.json();
 
+  // Check if required parameters are provided
   if (!site && !url && !k?.length) {
     return NextResponse.json({
       error: "Either Site, URL or Keywords required",
@@ -109,16 +104,17 @@ export async function POST(req: Request) {
   }
 
   try {
+    // Get access token
     const accessToken = await getToken();
     if (!accessToken) {
-      return NextResponse.json({ error: "Unable to get acccess token" });
+      return NextResponse.json({ error: "Unable to get access token" });
     }
 
-    // console.log('accessToken', accessToken);
-
+    // Get geo targets
     const getTargets = getGeoTargets(lang as string);
-    let geoTargetConstants = getTargets.geoTargetConstants.slice(0, 10); // max 10
+    let geoTargetConstants = getTargets.geoTargetConstants.slice(0, 10); // Maximum 10 targets
 
+    // Remove Russia from geo targets (if exists)
     const russia = "geoTargetConstants/2643"; // Russia is banned
     if (geoTargetConstants.includes(russia)) {
       geoTargetConstants = geoTargetConstants.filter(
@@ -127,19 +123,21 @@ export async function POST(req: Request) {
     }
 
     console.log(
-      "language",
+      "Language:",
       getTargets.locale,
       getTargets.lang,
       getTargets.criterionId
     );
-    console.log("geoTargetConstants", geoTargetConstants);
+    console.log("GeoTargetConstants:", geoTargetConstants);
 
+    // Prepare request body
     const keywordsArray = k?.length ? (Array.isArray(k) ? k : [k]) : [];
     const body: any = {
       language: `languageConstants/${getTargets.criterionId}`,
       geoTargetConstants,
     };
 
+    // Determine seed type based on provided parameters
     if (keywordsArray.length && url) {
       body.keywordAndUrlSeed = { keywords: keywordsArray, url };
     } else if (keywordsArray.length && !url) {
@@ -150,6 +148,7 @@ export async function POST(req: Request) {
       body.siteSeed = { site };
     }
 
+    // Send request to Google Ads API
     const result = await axios.post(
       `https://content-googleads.googleapis.com/v15/customers/${process.env.GOOGLE_API_CUSTOMER_ID}:generateKeywordIdeas?alt=json&key=${process.env.GOOGLE_API_KEY}`,
       body,
@@ -163,12 +162,15 @@ export async function POST(req: Request) {
       }
     );
 
+    // Extract and transform keywords data
     const keywords = ((result.data.results as any[]) || [])
       .filter((i) => !!i.keywordIdeaMetrics)
       .map((i) => makeShorter(i));
 
+    // Return response with extracted keywords
     return NextResponse.json({ url, keywords });
   } catch (ex: any) {
+    // Handle exceptions
     if (ex.response) {
       console.log("Data:", ex.response.data);
       console.log(
@@ -183,6 +185,7 @@ export async function POST(req: Request) {
       console.log("Error:", ex.message);
     }
 
+    // Return error response
     return NextResponse.json({ error: ex.message });
   }
 }

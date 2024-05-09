@@ -12,7 +12,7 @@ import { IconLoading } from "@/components/icons";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
-export default () => {
+export default function DashboardNavbar() {
   const { data: session } = useSession();
 
   const [isLogoutActive, setLogoutActive] = useState(false);
@@ -83,4 +83,4 @@ export default () => {
       </nav>
     </header>
   );
-};
+}

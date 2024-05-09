@@ -1,7 +1,7 @@
 import Heading from "../Heading";
 import Card, { DomainCardType } from "./Card";
 
-export default ({ list }: { list: DomainCardType[] }) => {
+export default function DomainsList({ list }: { list: DomainCardType[] }) {
   return list.length > 0 ? (
     <div>
       <Heading className="text-lg font-semibold flex items-center gap-x-3">
@@ -16,4 +16,4 @@ export default ({ list }: { list: DomainCardType[] }) => {
   ) : (
     <></>
   );
-};
+}

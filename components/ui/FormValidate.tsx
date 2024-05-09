@@ -22,7 +22,7 @@ export default function FormValidate({
         </p>
       </div>
       <form onSubmit={submit} className="mt-8">
-        <div className="flex items-center rounded-xl border py-1 px-2 ring-neutral-300 peer-invalid:border-red-500 focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2">
+        <div className="flex items-center rounded-xl border py-1 px-2 pl-3 ring-neutral-300 peer-invalid:border-red-500 focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2">
           <input
             required
             value={value}

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { DomainCardType } from "@/components/ui/DomainsList/Card";
+import { RedditRelatedPostDataType } from "@/components/ui/RedditRelatedPosts";
 
 type DomainResponseType = {
   _attributes: {
@@ -86,4 +87,26 @@ export function getTopCompetitors({
   axios.post("api/competitors", { ideaDescription }).then(({ data }) => {
     setCompetitors(data);
   });
+}
+
+// Get related posts from Reddit
+export async function getRedditRelatedPosts({
+  ideaDescription,
+  setRedditRelatedPosts,
+}: // setCompetitors,
+{
+  ideaDescription: string;
+  setRedditRelatedPosts: (data: RedditRelatedPostDataType[]) => void;
+}) {
+  const {
+    data: { keyword },
+  } = await axios.post("api/generatekeyword", {
+    ideaDescription,
+  });
+  console.log(keyword);
+  axios
+    .get(`https://www.reddit.com/search.json?q=${keyword}`)
+    .then(({ data }) => {
+      setRedditRelatedPosts(data.data.children);
+    });
 }
