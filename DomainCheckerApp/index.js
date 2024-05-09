@@ -31,7 +31,7 @@ app.post("/domain", async (req, res) => {
 
   // Making request to Namecheap API to check domain availability
   const { data } = await axios.get(
-    `${url}?ApiUser=${USERNAME_NAMECHEAP}&ApiKey=${API_KEY_NAMECHEAP}&UserName=${USERNAME_NAMECHEAP}&ClientIp=${CLIENT_IP_NAMECHEAP}&Command=namecheap.domains.check&DomainList=${domain}`
+    `${url}?ApiUser=${USERNAME_NAMECHEAP}&ApiKey=${API_KEY_NAMECHEAP}&UserName=${USERNAME_NAMECHEAP}&ClientIp=34.211.200.85&Command=namecheap.domains.check&DomainList=${domain}`
   );
 
   res.json(data);
