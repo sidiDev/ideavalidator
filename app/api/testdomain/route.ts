@@ -15,7 +15,9 @@ export async function GET(request: Request) {
 
   // Making request to Namecheap API to check domain availability
   const ApiUrl =
-    process.env.NODE_ENV == "development" ? "http://localhost:8000" : "";
+    process.env.NODE_ENV == "development"
+      ? "http://localhost:8000"
+      : "https://ideavalidator.onrender.com";
   const { data } = await axios.post(`${ApiUrl}/domain`, { domain: "form.com" });
 
   // Parsing XML response to JSON
