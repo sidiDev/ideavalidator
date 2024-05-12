@@ -10,8 +10,8 @@ type Params = {
 export async function GET(request: Request, context: { params: Params }) {
   const { slug } = context.params;
 
-  const query = e.select(e.Ideas, (idea) => ({
-    ...e.Ideas["*"],
+  const query = e.select(e.default.Ideas, (idea) => ({
+    ...e.default.Ideas["*"],
     filter_single: e.op(idea.slug, "=", slug),
   }));
 
