@@ -10,7 +10,7 @@
     "prebuild": "npx @edgedb/generate edgeql-js",
     "generate:interfaces": "npx @edgedb/generate interfaces",
     "generate:edgeql": "npx @edgedb/generate edgeql-js",
-    "generate:all": "pnpm generate:edgeql && pnpm generate:interfaces && pnpm run build"
+    "generate:all": "pnpm generate:edgeql && pnpm generate:interfaces"
   },
   "dependencies": {
     "@ai-sdk/openai": "^0.0.9",
