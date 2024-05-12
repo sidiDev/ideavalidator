@@ -64,10 +64,6 @@ module default {
         constraint exclusive on ((.identifier, .token));
     }
 
-    type Testing {
-        name: str;
-    }
-
     type Domain {
     required domain: str;
     required name: str;
