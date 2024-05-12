@@ -7,6 +7,7 @@ import { Adapter } from "next-auth/adapters";
 /**
  * For auth, go to this page to learn more aboutedgedb-adapter and how to use it with NextAuth library:
  * https://authjs.dev/reference/edgedb-adapter
+ * https://authjs.dev/getting-started/adapters/edgedb
  */
 
 const client = createClient();

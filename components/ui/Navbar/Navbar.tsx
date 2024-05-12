@@ -6,11 +6,11 @@ import NavLink from "./NavLink";
 import { useSession } from "next-auth/react";
 import { ArrowRight } from "lucide-react";
 
-export default function Navbar() {
+export default function Navbar({ className }: { className?: string }) {
   const { data: session } = useSession();
 
   return (
-    <header>
+    <header className={className}>
       <nav className="custom-screen-lg flex items-center justify-between gap-x-3 py-2">
         <div className="">
           <Brand href="https://rapidforms.co" />

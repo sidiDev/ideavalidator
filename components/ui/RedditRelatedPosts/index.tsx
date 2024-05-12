@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import Heading from "../Heading";
 import { Button } from "../button";
@@ -8,6 +10,7 @@ export type RedditRelatedPostType = {
   title: string;
   selftext: string;
   url: string;
+  created?: number;
   idx?: number;
 };
 
@@ -17,6 +20,7 @@ export type RedditRelatedPostDataType = {
     title: string;
     selftext: string;
     url: string;
+    created: number;
   };
 };
 

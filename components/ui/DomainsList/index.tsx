@@ -1,7 +1,9 @@
-import Heading from "../Heading";
-import Card, { DomainCardType } from "./Card";
+"use client";
 
-export default function DomainsList({ list }: { list: DomainCardType[] }) {
+import Heading from "../Heading";
+import Card, { DomainType } from "./Card";
+
+export default function DomainsList({ list }: { list: DomainType[] }) {
   return list.length > 0 ? (
     <div>
       <Heading className="text-lg font-semibold flex items-center gap-x-3">

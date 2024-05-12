@@ -1,6 +1,9 @@
 import axios from "axios";
-import { DomainCardType } from "@/components/ui/DomainsList/Card";
-import { RedditRelatedPostDataType } from "@/components/ui/RedditRelatedPosts";
+import { DomainType } from "@/components/ui/DomainsList/Card";
+import {
+  RedditRelatedPostDataType,
+  RedditRelatedPostType,
+} from "@/components/ui/RedditRelatedPosts";
 
 type DomainResponseType = {
   _attributes: {
@@ -39,7 +42,7 @@ export function getDomains({
   setDomainList,
 }: {
   ideaDescription: string;
-  setDomainList: (data: DomainCardType[]) => void;
+  setDomainList: (data: DomainType[]) => void;
 }) {
   axios
     .post("api/domain", { ideaDescription })
@@ -93,8 +96,7 @@ export function getTopCompetitors({
 export async function getRedditRelatedPosts({
   ideaDescription,
   setRedditRelatedPosts,
-}: // setCompetitors,
-{
+}: {
   ideaDescription: string;
   setRedditRelatedPosts: (data: RedditRelatedPostDataType[]) => void;
 }) {
@@ -107,6 +109,21 @@ export async function getRedditRelatedPosts({
   axios
     .get(`https://www.reddit.com/search.json?q=${keyword}`)
     .then(({ data }) => {
-      setRedditRelatedPosts(data.data.children);
+      const children = data.data.children.map(
+        ({ data: item }: { data: RedditRelatedPostType }) => ({
+          data: {
+            title: item.title,
+            subreddit: item.subreddit,
+            selftext: item.selftext,
+            url: item.url,
+            created: item.created,
+          },
+        })
+      );
+      setRedditRelatedPosts(children);
     });
 }
+
+// Delete Everything
+// const query = e.delete(e.Ideas, () => ({}));
+// const result = await query.run(client);

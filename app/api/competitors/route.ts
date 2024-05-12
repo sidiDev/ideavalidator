@@ -1,19 +1,13 @@
-import axios from "axios";
 import { NextResponse } from "next/server";
-import { env } from "process";
 import OpenAI from "openai";
-import { OpenAIStream, StreamingTextResponse } from "ai";
+import { AI_FIELDS } from "@/lib/utils";
 
 // For getting your IP address: https://ip.web-hosting.com
 
 // Create an OpenAI API client
-// but configure it to point to perplexity ai
-const perplexity = new OpenAI({
-  apiKey: process.env.PERPLEXITY_API_KEY || "",
-  // PERPLEXITY_API_KEY
-  baseURL: "https://api.perplexity.ai",
-  // https://api.perplexity.ai
-  // https://api.groq.com/openai/v1
+const openAIClient = new OpenAI({
+  apiKey: AI_FIELDS.API_KEY,
+  baseURL: AI_FIELDS.BASE_URL,
 });
 
 // Handler for POST requests
@@ -21,11 +15,8 @@ export async function POST(request: Request) {
   // Extracting idea description from request body
   const { ideaDescription } = await request.json();
 
-  // Generating response using perplexity
-  const response = await perplexity.chat.completions.create({
-    model: "llama-3-sonar-small-32k-chat",
-    // llama-3-sonar-small-32k-online
-    // mixtral-8x7b-32768
+  const response = await openAIClient.chat.completions.create({
+    model: AI_FIELDS.MODEL,
     stream: false,
     max_tokens: 1000,
     messages: [

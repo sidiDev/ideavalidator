@@ -1,13 +1,13 @@
 import Link from "next/link";
 
-export type DomainCardType = {
+export type DomainType = {
   domain: string;
   name: string;
   available?: boolean;
   isPremiumName?: boolean;
 };
 
-export default function Card({ domain, name }: DomainCardType) {
+export default function Card({ domain, name }: DomainType) {
   return (
     <li className="w-full h-full rounded-xl border shadow-sm overflow-hidden hover:shadow-none hover:border-indigo-600 duration-200">
       <Link

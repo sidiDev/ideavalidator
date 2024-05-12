@@ -1,3 +1,5 @@
+"use client";
+
 import { CompetitorsType } from "@/methods";
 import Heading from "../Heading";
 import Card from "./Card";

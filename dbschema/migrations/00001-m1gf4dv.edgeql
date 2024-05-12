@@ -1,6 +1,8 @@
-CREATE MIGRATION m1k5id5qd4akyx3po4kr4haeogp4h7r7l7hveticoiae3xlrsy3c5a
-    ONTO m1gejt3jtdbq4ixv25ocfklxo55gvsbtyhdkr2hyrbcis3jeo4osrq
+CREATE MIGRATION m1gf4dvdyoge2azdp44c6zun73boydqdbxkkqaitk5mpvqlvrv7xpq
+    ONTO initial
 {
+  CREATE EXTENSION pgcrypto VERSION '1.3';
+  CREATE EXTENSION auth VERSION '1.0';
   CREATE FUTURE nonrecursive_access_policies;
   CREATE TYPE default::Account {
       CREATE REQUIRED PROPERTY provider: std::str;
@@ -39,6 +41,47 @@ CREATE MIGRATION m1k5id5qd4akyx3po4kr4haeogp4h7r7l7hveticoiae3xlrsy3c5a
   };
   ALTER TYPE default::User {
       CREATE MULTI LINK accounts := (.<user[IS default::Account]);
+  };
+  CREATE TYPE default::Competitors {
+      CREATE REQUIRED PROPERTY description: std::str;
+      CREATE REQUIRED PROPERTY link: std::str;
+      CREATE REQUIRED PROPERTY name: std::str;
+  };
+  CREATE TYPE default::Domain {
+      CREATE PROPERTY available: std::bool;
+      CREATE REQUIRED PROPERTY domain: std::str;
+      CREATE PROPERTY isPremiumName: std::bool;
+      CREATE REQUIRED PROPERTY name: std::str;
+  };
+  CREATE TYPE default::KeywordMetrics {
+      CREATE REQUIRED PROPERTY avgSearches: std::int64;
+      CREATE REQUIRED PROPERTY c: std::str;
+      CREATE REQUIRED PROPERTY cIx: std::int64;
+      CREATE REQUIRED PROPERTY g_m12: std::int64;
+      CREATE REQUIRED PROPERTY g_m3: std::int64;
+      CREATE REQUIRED PROPERTY g_m6: std::int64;
+      CREATE REQUIRED PROPERTY high: std::int64;
+      CREATE REQUIRED PROPERTY low: std::int64;
+      CREATE REQUIRED PROPERTY text: std::str;
+  };
+  CREATE TYPE default::Keywords {
+      CREATE REQUIRED LINK metrics: default::KeywordMetrics;
+      CREATE REQUIRED PROPERTY text: std::str;
+  };
+  CREATE TYPE default::RedditRelatedPostData {
+      CREATE REQUIRED PROPERTY created: std::int64;
+      CREATE REQUIRED PROPERTY selftext: std::str;
+      CREATE REQUIRED PROPERTY subreddit: std::str;
+      CREATE REQUIRED PROPERTY title: std::str;
+      CREATE REQUIRED PROPERTY url: std::str;
+  };
+  CREATE TYPE default::Ideas {
+      CREATE MULTI LINK topCompetitors: default::Competitors;
+      CREATE MULTI LINK domainList: default::Domain;
+      CREATE MULTI LINK keywords: default::Keywords;
+      CREATE MULTI LINK redditRelatedPosts: default::RedditRelatedPostData;
+      CREATE MULTI PROPERTY keyword: std::str;
+      CREATE REQUIRED PROPERTY slug: std::str;
   };
   CREATE TYPE default::Session {
       CREATE REQUIRED LINK user: default::User {
