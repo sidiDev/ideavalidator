@@ -20,6 +20,7 @@ export default function KeywordSearchCard({
       ["monthly search"]: item.metrics.avgSearches,
     }))
     .sort((a, b) => b["monthly search"] - a["monthly search"]);
+
   return keyword ? (
     <>
       <Heading>
@@ -30,6 +31,7 @@ export default function KeywordSearchCard({
         data={chartdata}
         index="name"
         categories={["monthly search"]}
+        showAnimation={true}
         colors={["indigo"]}
         valueFormatter={dataFormatter}
         yAxisWidth={48}

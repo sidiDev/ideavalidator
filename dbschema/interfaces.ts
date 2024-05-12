@@ -107,6 +107,7 @@ export namespace $default {
     "redditRelatedPosts"?: unknown[] | null;
     "topCompetitors"?: unknown[] | null;
     "userId": string;
+    "description": string;
   }
   export interface KeywordMetrics extends std.$Object {
     "avgSearches": number;

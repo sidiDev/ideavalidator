@@ -17,7 +17,7 @@ import TopCompetitors from "@/components/ui/TopCompetitors";
 import RedditRelatedPosts, {
   RedditRelatedPostDataType,
 } from "@/components/ui/RedditRelatedPosts";
-import SaveButton from "@/components/ui/SaveButton/SaveButton";
+import SaveButton from "@/components/ui/SaveButton";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
@@ -58,6 +58,7 @@ export default function Dashboard() {
       topCompetitors,
       redditRelatedPosts,
       userId: (session?.user as { id: string }).id,
+      ideaDescription,
     });
 
     if (data.saved) {

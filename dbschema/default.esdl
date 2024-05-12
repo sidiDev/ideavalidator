@@ -102,6 +102,7 @@ module default {
         required keyword: str;
         required slug: str;
         required userId: str;
+        required description: str;
         keywords: array<json>;
         domainList: array<json>;
         topCompetitors: array<json>;

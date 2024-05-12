@@ -7,8 +7,14 @@ import { createSlug } from "@/lib/utils";
 
 // Handler for POST requests
 export async function POST(req: Request) {
-  const { keywords, domainList, topCompetitors, redditRelatedPosts, userId } =
-    await req.json();
+  const {
+    keywords,
+    domainList,
+    topCompetitors,
+    redditRelatedPosts,
+    userId,
+    ideaDescription,
+  } = await req.json();
 
   const slug = `${createSlug(keywords.keyword)}-${uuidv4().slice(0, 6)}`;
 
@@ -22,6 +28,7 @@ export async function POST(req: Request) {
       (item: RedditRelatedPostDataType) => ({ ...item.data })
     ),
     slug: slug,
+    description: ideaDescription,
   });
 
   const result = await query.run(client);
@@ -32,3 +39,5 @@ export async function POST(req: Request) {
     slug,
   });
 }
+
+// TO reset schema: reset schema to initial ;

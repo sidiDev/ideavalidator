@@ -6,30 +6,54 @@ import RedditRelatedPosts from "@/components/ui/RedditRelatedPosts";
 import { url } from "@/lib/utils";
 import { RedditRelatedPostData } from "@/dbschema/interfaces";
 import { notFound } from "next/navigation";
+import Navbar from "@/components/ui/Navbar/Navbar";
+import ShareButton from "@/components/ui/ShareButton";
 
-export default async function Page({ params }: { params: { slug: string } }) {
+type Params = { params: { slug: string } };
+export async function generateMetadata({ params }: Params) {
+  const {
+    data: { response },
+  } = await axios.get(`${url}/api/methods/get/${params.slug}`);
+
+  return {
+    title: response ? `${response.keyword} - Idea validator` : "",
+    description: response ? response.description : "",
+  };
+}
+
+export default async function Page({ params }: Params) {
   const {
     data: { response },
   } = await axios.get(`${url}/api/methods/get/${params.slug}`);
 
   return response ? (
-    <div className="mt-20 max-w-screen-md mx-auto px-4">
-      <div className="space-y-12 mt-24 pb-4">
-        <KeywordSearchCard
-          keywords={response.keywords}
-          keyword={response.keyword}
-        />
-        <div>
-          <DomainsList list={response.domainList} />
-        </div>
-        <TopCompetitors list={response.topCompetitors} />
-        <RedditRelatedPosts
-          list={response.redditRelatedPosts.map(
-            (item: RedditRelatedPostData) => ({ data: item })
-          )}
-        />
+    <>
+      <Navbar className="border-b" />
+      <div className="text-center max-w-xl mx-auto">
+        <h1 className="mt-20 text-4xl font-semibold">
+          Learn More About This Idea
+        </h1>
+        <p className="mt-2 text-neutral-600">{response.description}</p>
       </div>
-    </div>
+      <div className="mt-12 max-w-screen-md mx-auto px-4">
+        <div className="space-y-12 mt-24 pb-12">
+          <KeywordSearchCard
+            keywords={response.keywords}
+            keyword={response.keyword}
+          />
+          <div>
+            <DomainsList list={response.domainList} />
+          </div>
+          <TopCompetitors list={response.topCompetitors} />
+          <RedditRelatedPosts
+            list={response.redditRelatedPosts.map(
+              (item: RedditRelatedPostData) => ({ data: item })
+            )}
+          />
+        </div>
+        <ShareButton slug={response.slug} title={response.keyword} />
+      </div>
+    </>
   ) : (
     notFound()
   );
