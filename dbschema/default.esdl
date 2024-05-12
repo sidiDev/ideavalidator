@@ -67,8 +67,6 @@ module default {
     type Domain {
     required domain: str;
     required name: str;
-    available: bool;
-    isPremiumName: bool;
     }
 
     type KeywordMetrics {

@@ -1,6 +1,4 @@
-import axios from "axios";
 import { NextResponse } from "next/server";
-import xmljs from "xml-js";
 import OpenAI from "openai";
 import { AI_FIELDS } from "@/lib/utils";
 
@@ -33,26 +31,13 @@ export async function POST(request: Request) {
     ],
   });
 
-  // Configuring options for XML parsing
-  const options = {
-    compact: true,
-    ignoreAttributes: false,
-  };
-
-  // Making request to Namecheap API to check domain availability
-  const ApiUrl =
-    process.env.NODE_ENV == "development"
-      ? "http://localhost:8000"
-      : "https://ideavalidator.onrender.com";
-  const { data } = await axios.post(`${ApiUrl}/domain`, {
-    domain: JSON.parse(response.choices[0].message.content as string).join(","),
-  });
-
-  // Parsing XML response to JSON
-  const json = xmljs.xml2json(data, options);
-
   // Returning JSON response
   return NextResponse.json({
-    response: JSON.parse(json).ApiResponse.CommandResponse.DomainCheckResult,
+    response: JSON.parse(response.choices[0].message.content as string).map(
+      (item: string) => ({
+        name: item.replace(/\..*/, ""),
+        domain: item,
+      })
+    ),
   });
 }

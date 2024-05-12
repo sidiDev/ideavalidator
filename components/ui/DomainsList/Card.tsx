@@ -3,8 +3,6 @@ import Link from "next/link";
 export type DomainType = {
   domain: string;
   name: string;
-  available?: boolean;
-  isPremiumName?: boolean;
 };
 
 export default function Card({ domain, name }: DomainType) {

@@ -5,14 +5,6 @@ import {
   RedditRelatedPostType,
 } from "@/components/ui/RedditRelatedPosts";
 
-type DomainResponseType = {
-  _attributes: {
-    Available: string;
-    IsPremiumName: string;
-    Domain: string;
-  };
-};
-
 export type KeywordType = {
   text: string;
   metrics: {
@@ -46,24 +38,10 @@ export function getDomains({
 }) {
   axios
     .post("api/domain", { ideaDescription })
-    .then(
-      ({
-        data: { response },
-      }: {
-        data: { response: DomainResponseType[] };
-      }) => {
-        const filterResponses = response
-          .map((item) => ({
-            name: item._attributes.Domain.replace(/\..*/, ""),
-            domain: item._attributes.Domain,
-            available: JSON.parse(item._attributes.Available),
-            isPremiumName: JSON.parse(item._attributes.IsPremiumName),
-          }))
-          .filter((item) => item.available && !item.isPremiumName)
-          .slice(0, 3);
-        setDomainList(filterResponses);
-      }
-    );
+    .then(({ data: { response } }: { data: { response: DomainType[] } }) => {
+      const filterResponses = response.slice(0, 3);
+      setDomainList(filterResponses);
+    });
 }
 
 // Get keywords monthly search and other stats related to
