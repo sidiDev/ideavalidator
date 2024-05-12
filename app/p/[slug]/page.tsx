@@ -51,7 +51,11 @@ export default async function Page({ params }: Params) {
             )}
           />
         </div>
-        <ShareButton slug={response.slug} title={response.keyword} />
+        <ShareButton
+          slug={response.slug}
+          title={response.keyword}
+          text={response.description}
+        />
       </div>
     </>
   ) : (

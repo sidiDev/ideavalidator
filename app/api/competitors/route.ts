@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { AI_FIELDS } from "@/lib/utils";
 
-// For getting your IP address: https://ip.web-hosting.com
-
 // Create an OpenAI API client
 const openAIClient = new OpenAI({
   apiKey: AI_FIELDS.API_KEY,

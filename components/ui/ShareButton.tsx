@@ -7,36 +7,27 @@ import { url } from "@/lib/utils";
 export default function ShareButton({
   slug,
   title,
+  text,
 }: {
   slug: string;
   title: string;
+  text: string;
 }) {
-  function shareIdea() {
-    // Fallback, Tries to use API only
-    // if navigator.share function is
-    // available
-    if (navigator.share) {
-      navigator
-        .share({
-          // Title that occurs over
-          // web share dialog
-          title: title,
-
-          // URL to share
-          url: `${url}/p/${slug}`,
-        })
-        .then(() => {
-          console.log("Thanks for sharing!");
-        })
-        .catch((err) => {
-          // Handle errors, if occurred
-          console.log("Error while using Web share API:");
-          console.log(err);
-        });
-    } else {
-      // Alerts user if API not available
+  async function shareIdea() {
+    try {
+      await navigator.share({
+        // Title that occurs over
+        // web share dialog
+        title: title,
+        text: text,
+        // URL to share
+        url: `${url}/p/${slug}`,
+      });
+    } catch (err) {
       alert("Browser doesn't support this share method !");
     }
+
+    // Alerts user if API not available
   }
   return (
     <div className="sticky inset-x-0 bottom-4">
