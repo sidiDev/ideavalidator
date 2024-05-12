@@ -1,8 +1,6 @@
-CREATE MIGRATION m1ptobnwxuqk6ltws5tuqwerxko5azmluxlv7cbxvyy7f3rksvyjza
-    ONTO initial
+CREATE MIGRATION m1k5id5qd4akyx3po4kr4haeogp4h7r7l7hveticoiae3xlrsy3c5a
+    ONTO m1gejt3jtdbq4ixv25ocfklxo55gvsbtyhdkr2hyrbcis3jeo4osrq
 {
-  CREATE EXTENSION pgcrypto VERSION '1.3';
-  CREATE EXTENSION auth VERSION '1.0';
   CREATE FUTURE nonrecursive_access_policies;
   CREATE TYPE default::Account {
       CREATE REQUIRED PROPERTY provider: std::str;
@@ -41,45 +39,6 @@ CREATE MIGRATION m1ptobnwxuqk6ltws5tuqwerxko5azmluxlv7cbxvyy7f3rksvyjza
   };
   ALTER TYPE default::User {
       CREATE MULTI LINK accounts := (.<user[IS default::Account]);
-  };
-  CREATE TYPE default::Competitors {
-      CREATE REQUIRED PROPERTY description: std::str;
-      CREATE REQUIRED PROPERTY link: std::str;
-      CREATE REQUIRED PROPERTY name: std::str;
-  };
-  CREATE TYPE default::Domain {
-      CREATE PROPERTY available: std::bool;
-      CREATE REQUIRED PROPERTY domain: std::str;
-      CREATE PROPERTY isPremiumName: std::bool;
-      CREATE REQUIRED PROPERTY name: std::str;
-  };
-  CREATE TYPE default::Ideas {
-      CREATE REQUIRED PROPERTY description: std::str;
-      CREATE PROPERTY domainList: array<std::json>;
-      CREATE REQUIRED PROPERTY keyword: std::str;
-      CREATE PROPERTY keywords: array<std::json>;
-      CREATE PROPERTY redditRelatedPosts: array<std::json>;
-      CREATE REQUIRED PROPERTY slug: std::str;
-      CREATE PROPERTY topCompetitors: array<std::json>;
-      CREATE REQUIRED PROPERTY userId: std::str;
-  };
-  CREATE TYPE default::KeywordMetrics {
-      CREATE REQUIRED PROPERTY avgSearches: std::int64;
-      CREATE REQUIRED PROPERTY c: std::str;
-      CREATE REQUIRED PROPERTY cIx: std::int64;
-      CREATE REQUIRED PROPERTY high: std::int64;
-      CREATE REQUIRED PROPERTY low: std::int64;
-  };
-  CREATE TYPE default::Keywords {
-      CREATE REQUIRED LINK metrics: default::KeywordMetrics;
-      CREATE REQUIRED PROPERTY text: std::str;
-  };
-  CREATE TYPE default::RedditRelatedPostData {
-      CREATE REQUIRED PROPERTY created: std::int64;
-      CREATE REQUIRED PROPERTY selftext: std::str;
-      CREATE REQUIRED PROPERTY subreddit: std::str;
-      CREATE REQUIRED PROPERTY title: std::str;
-      CREATE REQUIRED PROPERTY url: std::str;
   };
   CREATE TYPE default::Session {
       CREATE REQUIRED LINK user: default::User {
