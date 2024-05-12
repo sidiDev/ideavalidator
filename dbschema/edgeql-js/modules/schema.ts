@@ -720,14 +720,14 @@ export type $ObjectTypeλShape = $.typeutil.flatten<$SourceλShape & Omit<$Consi
   "<__type__[is ext::auth::ClientTokenIdentity]": $.LinkDesc<_extauth.$ClientTokenIdentity, $.Cardinality.Many, {}, false, false,  false, false>;
   "<__type__[is Account]": $.LinkDesc<_default.$Account, $.Cardinality.Many, {}, false, false,  false, false>;
   "<__type__[is User]": $.LinkDesc<_default.$User, $.Cardinality.Many, {}, false, false,  false, false>;
+  "<__type__[is Session]": $.LinkDesc<_default.$Session, $.Cardinality.Many, {}, false, false,  false, false>;
+  "<__type__[is VerificationToken]": $.LinkDesc<_default.$VerificationToken, $.Cardinality.Many, {}, false, false,  false, false>;
   "<__type__[is Competitors]": $.LinkDesc<_default.$Competitors, $.Cardinality.Many, {}, false, false,  false, false>;
   "<__type__[is Domain]": $.LinkDesc<_default.$Domain, $.Cardinality.Many, {}, false, false,  false, false>;
+  "<__type__[is Ideas]": $.LinkDesc<_default.$Ideas, $.Cardinality.Many, {}, false, false,  false, false>;
   "<__type__[is KeywordMetrics]": $.LinkDesc<_default.$KeywordMetrics, $.Cardinality.Many, {}, false, false,  false, false>;
   "<__type__[is Keywords]": $.LinkDesc<_default.$Keywords, $.Cardinality.Many, {}, false, false,  false, false>;
   "<__type__[is RedditRelatedPostData]": $.LinkDesc<_default.$RedditRelatedPostData, $.Cardinality.Many, {}, false, false,  false, false>;
-  "<__type__[is Ideas]": $.LinkDesc<_default.$Ideas, $.Cardinality.Many, {}, false, false,  false, false>;
-  "<__type__[is Session]": $.LinkDesc<_default.$Session, $.Cardinality.Many, {}, false, false,  false, false>;
-  "<__type__[is VerificationToken]": $.LinkDesc<_default.$VerificationToken, $.Cardinality.Many, {}, false, false,  false, false>;
   "<__type__": $.LinkDesc<$.ObjectType, $.Cardinality.Many, {}, false, false,  false, false>;
   "<intersection_of": $.LinkDesc<$.ObjectType, $.Cardinality.Many, {}, false, false,  false, false>;
   "<subject": $.LinkDesc<$.ObjectType, $.Cardinality.Many, {}, false, false,  false, false>;

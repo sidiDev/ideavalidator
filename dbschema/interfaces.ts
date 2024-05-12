@@ -100,14 +100,14 @@ export namespace $default {
     "name": string;
   }
   export interface Ideas extends std.$Object {
-    "slug": string;
+    "description": string;
+    "domainList"?: unknown[] | null;
     "keyword": string;
     "keywords"?: unknown[] | null;
-    "domainList"?: unknown[] | null;
     "redditRelatedPosts"?: unknown[] | null;
+    "slug": string;
     "topCompetitors"?: unknown[] | null;
     "userId": string;
-    "description": string;
   }
   export interface KeywordMetrics extends std.$Object {
     "avgSearches": number;

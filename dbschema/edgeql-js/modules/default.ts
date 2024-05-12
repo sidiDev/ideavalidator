@@ -25,7 +25,7 @@ type $Account = $.ObjectType<"default::Account", $AccountλShape, null, [
   {provider: {__element__: _std.$str, __cardinality__: $.Cardinality.One | $.Cardinality.AtMostOne },providerAccountId: {__element__: _std.$str, __cardinality__: $.Cardinality.One | $.Cardinality.AtMostOne },},
   {providerAccountId: {__element__: _std.$str, __cardinality__: $.Cardinality.One | $.Cardinality.AtMostOne },},
 ]>;
-const $Account = $.makeType<$Account>(_.spec, "0c67346c-107c-11ef-ac68-fb8157149cea", _.syntax.literal);
+const $Account = $.makeType<$Account>(_.spec, "6286bda0-109e-11ef-aac4-6df3a306d7c7", _.syntax.literal);
 
 const Account: $.$expr_PathNode<$.TypeSet<$Account, $.Cardinality.Many>, null> = _.syntax.$PathNode($.$toSet($Account, $.Cardinality.Many), null);
 
@@ -37,7 +37,7 @@ export type $CompetitorsλShape = $.typeutil.flatten<_std.$Object_8ce8c71ee4fa5f
 type $Competitors = $.ObjectType<"default::Competitors", $CompetitorsλShape, null, [
   ..._std.$Object_8ce8c71ee4fa5f73840c22d7eaa58588['__exclusives__'],
 ]>;
-const $Competitors = $.makeType<$Competitors>(_.spec, "0c6cbe50-107c-11ef-8eb1-074dce6e22ae", _.syntax.literal);
+const $Competitors = $.makeType<$Competitors>(_.spec, "c39ed1d4-10a0-11ef-b8db-61aec19a3e1e", _.syntax.literal);
 
 const Competitors: $.$expr_PathNode<$.TypeSet<$Competitors, $.Cardinality.Many>, null> = _.syntax.$PathNode($.$toSet($Competitors, $.Cardinality.Many), null);
 
@@ -50,24 +50,24 @@ export type $DomainλShape = $.typeutil.flatten<_std.$Object_8ce8c71ee4fa5f73840
 type $Domain = $.ObjectType<"default::Domain", $DomainλShape, null, [
   ..._std.$Object_8ce8c71ee4fa5f73840c22d7eaa58588['__exclusives__'],
 ]>;
-const $Domain = $.makeType<$Domain>(_.spec, "0c6daa04-107c-11ef-8458-33cfcf86624c", _.syntax.literal);
+const $Domain = $.makeType<$Domain>(_.spec, "c3a00d88-10a0-11ef-8d61-6353da0f7b81", _.syntax.literal);
 
 const Domain: $.$expr_PathNode<$.TypeSet<$Domain, $.Cardinality.Many>, null> = _.syntax.$PathNode($.$toSet($Domain, $.Cardinality.Many), null);
 
 export type $IdeasλShape = $.typeutil.flatten<_std.$Object_8ce8c71ee4fa5f73840c22d7eaa58588λShape & {
-  "slug": $.PropertyDesc<_std.$str, $.Cardinality.One, false, false, false, false>;
+  "description": $.PropertyDesc<_std.$str, $.Cardinality.One, false, false, false, false>;
+  "domainList": $.PropertyDesc<$.ArrayType<_std.$json>, $.Cardinality.AtMostOne, false, false, false, false>;
   "keyword": $.PropertyDesc<_std.$str, $.Cardinality.One, false, false, false, false>;
   "keywords": $.PropertyDesc<$.ArrayType<_std.$json>, $.Cardinality.AtMostOne, false, false, false, false>;
-  "domainList": $.PropertyDesc<$.ArrayType<_std.$json>, $.Cardinality.AtMostOne, false, false, false, false>;
   "redditRelatedPosts": $.PropertyDesc<$.ArrayType<_std.$json>, $.Cardinality.AtMostOne, false, false, false, false>;
+  "slug": $.PropertyDesc<_std.$str, $.Cardinality.One, false, false, false, false>;
   "topCompetitors": $.PropertyDesc<$.ArrayType<_std.$json>, $.Cardinality.AtMostOne, false, false, false, false>;
   "userId": $.PropertyDesc<_std.$str, $.Cardinality.One, false, false, false, false>;
-  "description": $.PropertyDesc<_std.$str, $.Cardinality.One, false, false, false, false>;
 }>;
 type $Ideas = $.ObjectType<"default::Ideas", $IdeasλShape, null, [
   ..._std.$Object_8ce8c71ee4fa5f73840c22d7eaa58588['__exclusives__'],
 ]>;
-const $Ideas = $.makeType<$Ideas>(_.spec, "0c720d92-107c-11ef-bf8f-25c7d5bd01bf", _.syntax.literal);
+const $Ideas = $.makeType<$Ideas>(_.spec, "c3a120e2-10a0-11ef-a3b5-17c4ce5243bd", _.syntax.literal);
 
 const Ideas: $.$expr_PathNode<$.TypeSet<$Ideas, $.Cardinality.Many>, null> = _.syntax.$PathNode($.$toSet($Ideas, $.Cardinality.Many), null);
 
@@ -83,7 +83,7 @@ export type $KeywordMetricsλShape = $.typeutil.flatten<_std.$Object_8ce8c71ee4f
 type $KeywordMetrics = $.ObjectType<"default::KeywordMetrics", $KeywordMetricsλShape, null, [
   ..._std.$Object_8ce8c71ee4fa5f73840c22d7eaa58588['__exclusives__'],
 ]>;
-const $KeywordMetrics = $.makeType<$KeywordMetrics>(_.spec, "0c6ebb24-107c-11ef-932c-87469a3dac8f", _.syntax.literal);
+const $KeywordMetrics = $.makeType<$KeywordMetrics>(_.spec, "c3a27398-10a0-11ef-949f-b932a19a18b3", _.syntax.literal);
 
 const KeywordMetrics: $.$expr_PathNode<$.TypeSet<$KeywordMetrics, $.Cardinality.Many>, null> = _.syntax.$PathNode($.$toSet($KeywordMetrics, $.Cardinality.Many), null);
 
@@ -94,7 +94,7 @@ export type $KeywordsλShape = $.typeutil.flatten<_std.$Object_8ce8c71ee4fa5f738
 type $Keywords = $.ObjectType<"default::Keywords", $KeywordsλShape, null, [
   ..._std.$Object_8ce8c71ee4fa5f73840c22d7eaa58588['__exclusives__'],
 ]>;
-const $Keywords = $.makeType<$Keywords>(_.spec, "0c6ff552-107c-11ef-97e3-355f8ee6c4d2", _.syntax.literal);
+const $Keywords = $.makeType<$Keywords>(_.spec, "c3a3a326-10a0-11ef-9894-11231a7775a9", _.syntax.literal);
 
 const Keywords: $.$expr_PathNode<$.TypeSet<$Keywords, $.Cardinality.Many>, null> = _.syntax.$PathNode($.$toSet($Keywords, $.Cardinality.Many), null);
 
@@ -108,7 +108,7 @@ export type $RedditRelatedPostDataλShape = $.typeutil.flatten<_std.$Object_8ce8
 type $RedditRelatedPostData = $.ObjectType<"default::RedditRelatedPostData", $RedditRelatedPostDataλShape, null, [
   ..._std.$Object_8ce8c71ee4fa5f73840c22d7eaa58588['__exclusives__'],
 ]>;
-const $RedditRelatedPostData = $.makeType<$RedditRelatedPostData>(_.spec, "0c70f556-107c-11ef-ba19-455141b7ba7d", _.syntax.literal);
+const $RedditRelatedPostData = $.makeType<$RedditRelatedPostData>(_.spec, "c3a4b716-10a0-11ef-b649-af8cde745608", _.syntax.literal);
 
 const RedditRelatedPostData: $.$expr_PathNode<$.TypeSet<$RedditRelatedPostData, $.Cardinality.Many>, null> = _.syntax.$PathNode($.$toSet($RedditRelatedPostData, $.Cardinality.Many), null);
 
@@ -125,7 +125,7 @@ type $Session = $.ObjectType<"default::Session", $SessionλShape, null, [
   ..._std.$Object_8ce8c71ee4fa5f73840c22d7eaa58588['__exclusives__'],
   {sessionToken: {__element__: _std.$str, __cardinality__: $.Cardinality.One | $.Cardinality.AtMostOne },},
 ]>;
-const $Session = $.makeType<$Session>(_.spec, "0c73a29c-107c-11ef-8b01-598a22558ad7", _.syntax.literal);
+const $Session = $.makeType<$Session>(_.spec, "62a9485c-109e-11ef-bc4f-198894927443", _.syntax.literal);
 
 const Session: $.$expr_PathNode<$.TypeSet<$Session, $.Cardinality.Many>, null> = _.syntax.$PathNode($.$toSet($Session, $.Cardinality.Many), null);
 
@@ -145,7 +145,7 @@ type $User = $.ObjectType<"default::User", $UserλShape, null, [
   ..._std.$Object_8ce8c71ee4fa5f73840c22d7eaa58588['__exclusives__'],
   {email: {__element__: _std.$str, __cardinality__: $.Cardinality.One | $.Cardinality.AtMostOne },},
 ]>;
-const $User = $.makeType<$User>(_.spec, "0c69e41e-107c-11ef-866d-59720f22a29b", _.syntax.literal);
+const $User = $.makeType<$User>(_.spec, "628c84a6-109e-11ef-815e-9ff92899f1a0", _.syntax.literal);
 
 const User: $.$expr_PathNode<$.TypeSet<$User, $.Cardinality.Many>, null> = _.syntax.$PathNode($.$toSet($User, $.Cardinality.Many), null);
 
@@ -160,7 +160,7 @@ type $VerificationToken = $.ObjectType<"default::VerificationToken", $Verificati
   {identifier: {__element__: _std.$str, __cardinality__: $.Cardinality.One | $.Cardinality.AtMostOne },token: {__element__: _std.$str, __cardinality__: $.Cardinality.One | $.Cardinality.AtMostOne },},
   {token: {__element__: _std.$str, __cardinality__: $.Cardinality.One | $.Cardinality.AtMostOne },},
 ]>;
-const $VerificationToken = $.makeType<$VerificationToken>(_.spec, "0c823438-107c-11ef-bea2-ad939b0f5385", _.syntax.literal);
+const $VerificationToken = $.makeType<$VerificationToken>(_.spec, "62ac52ea-109e-11ef-9742-bb3af78988df", _.syntax.literal);
 
 const VerificationToken: $.$expr_PathNode<$.TypeSet<$VerificationToken, $.Cardinality.Many>, null> = _.syntax.$PathNode($.$toSet($VerificationToken, $.Cardinality.Many), null);
 
