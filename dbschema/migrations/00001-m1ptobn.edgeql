@@ -1,4 +1,4 @@
-CREATE MIGRATION m1gf4dvdyoge2azdp44c6zun73boydqdbxkkqaitk5mpvqlvrv7xpq
+CREATE MIGRATION m1ptobnwxuqk6ltws5tuqwerxko5azmluxlv7cbxvyy7f3rksvyjza
     ONTO initial
 {
   CREATE EXTENSION pgcrypto VERSION '1.3';
@@ -53,16 +53,22 @@ CREATE MIGRATION m1gf4dvdyoge2azdp44c6zun73boydqdbxkkqaitk5mpvqlvrv7xpq
       CREATE PROPERTY isPremiumName: std::bool;
       CREATE REQUIRED PROPERTY name: std::str;
   };
+  CREATE TYPE default::Ideas {
+      CREATE REQUIRED PROPERTY description: std::str;
+      CREATE PROPERTY domainList: array<std::json>;
+      CREATE REQUIRED PROPERTY keyword: std::str;
+      CREATE PROPERTY keywords: array<std::json>;
+      CREATE PROPERTY redditRelatedPosts: array<std::json>;
+      CREATE REQUIRED PROPERTY slug: std::str;
+      CREATE PROPERTY topCompetitors: array<std::json>;
+      CREATE REQUIRED PROPERTY userId: std::str;
+  };
   CREATE TYPE default::KeywordMetrics {
       CREATE REQUIRED PROPERTY avgSearches: std::int64;
       CREATE REQUIRED PROPERTY c: std::str;
       CREATE REQUIRED PROPERTY cIx: std::int64;
-      CREATE REQUIRED PROPERTY g_m12: std::int64;
-      CREATE REQUIRED PROPERTY g_m3: std::int64;
-      CREATE REQUIRED PROPERTY g_m6: std::int64;
       CREATE REQUIRED PROPERTY high: std::int64;
       CREATE REQUIRED PROPERTY low: std::int64;
-      CREATE REQUIRED PROPERTY text: std::str;
   };
   CREATE TYPE default::Keywords {
       CREATE REQUIRED LINK metrics: default::KeywordMetrics;
@@ -74,14 +80,6 @@ CREATE MIGRATION m1gf4dvdyoge2azdp44c6zun73boydqdbxkkqaitk5mpvqlvrv7xpq
       CREATE REQUIRED PROPERTY subreddit: std::str;
       CREATE REQUIRED PROPERTY title: std::str;
       CREATE REQUIRED PROPERTY url: std::str;
-  };
-  CREATE TYPE default::Ideas {
-      CREATE MULTI LINK topCompetitors: default::Competitors;
-      CREATE MULTI LINK domainList: default::Domain;
-      CREATE MULTI LINK keywords: default::Keywords;
-      CREATE MULTI LINK redditRelatedPosts: default::RedditRelatedPostData;
-      CREATE MULTI PROPERTY keyword: std::str;
-      CREATE REQUIRED PROPERTY slug: std::str;
   };
   CREATE TYPE default::Session {
       CREATE REQUIRED LINK user: default::User {
