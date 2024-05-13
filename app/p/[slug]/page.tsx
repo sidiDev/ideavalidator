@@ -2,9 +2,10 @@ import DomainsList from "@/components/ui/DomainsList";
 import axios from "axios";
 import KeywordSearchCard from "@/components/ui/KeywordSearchCard";
 import TopCompetitors from "@/components/ui/TopCompetitors";
-import RedditRelatedPosts from "@/components/ui/RedditRelatedPosts";
+import RedditRelatedPosts, {
+  RedditRelatedPostDataType,
+} from "@/components/ui/RedditRelatedPosts";
 import { url } from "@/lib/utils";
-import { RedditRelatedPostData } from "@/dbschema/interfaces";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/ui/Navbar/Navbar";
 import ShareButton from "@/components/ui/ShareButton";
@@ -47,7 +48,7 @@ export default async function Page({ params }: Params) {
           <TopCompetitors list={response.topCompetitors} />
           <RedditRelatedPosts
             list={response.redditRelatedPosts.map(
-              (item: RedditRelatedPostData) => ({ data: item })
+              (item: RedditRelatedPostDataType) => ({ data: item })
             )}
           />
         </div>
