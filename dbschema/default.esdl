@@ -69,7 +69,7 @@ module default {
         required slug: str;
         required userId: str;
         required description: str;
-        required createdAt: datetime;
+        required createdAt: int32;
         keywords: array<json>;
         domainList: array<json>;
         topCompetitors: array<json>;

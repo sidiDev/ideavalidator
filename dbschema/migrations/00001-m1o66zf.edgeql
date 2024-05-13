@@ -1,4 +1,4 @@
-CREATE MIGRATION m1wv2qaxcjgv4bbacuzlldkfdpnplsczbzhoouqhrn4svfby7cdriq
+CREATE MIGRATION m1o66zfwvmxnnugy4aulwtdhuk2bcjpgsvxie65zceu523syfcwbaa
     ONTO initial
 {
   CREATE EXTENSION pgcrypto VERSION '1.3';
@@ -43,7 +43,7 @@ CREATE MIGRATION m1wv2qaxcjgv4bbacuzlldkfdpnplsczbzhoouqhrn4svfby7cdriq
       CREATE MULTI LINK accounts := (.<user[IS default::Account]);
   };
   CREATE TYPE default::Ideas {
-      CREATE REQUIRED PROPERTY createdAt: std::datetime;
+      CREATE REQUIRED PROPERTY createdAt: std::int32;
       CREATE REQUIRED PROPERTY description: std::str;
       CREATE PROPERTY domainList: array<std::json>;
       CREATE REQUIRED PROPERTY keyword: std::str;
