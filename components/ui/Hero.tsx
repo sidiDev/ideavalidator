@@ -22,7 +22,9 @@ export default function Hero() {
           about your idea so that you know whether it's worth pursuing.
         </p>
         <div className="flex justify-center gap-3">
-          <ButtonLogin>Validate Idea</ButtonLogin>
+          <Button>
+            <Link href="/dashboard">Validate Idea</Link>
+          </Button>
           <Button asChild variant="outline" className="bg-white shadow-sm">
             <Link href="/">Watch Demo</Link>
           </Button>
