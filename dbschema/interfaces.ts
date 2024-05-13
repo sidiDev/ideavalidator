@@ -5,10 +5,10 @@ export namespace std {
   export interface BaseObject {
     "id": string;
   }
+  export interface $Object extends BaseObject {}
   export type Endian = "Little" | "Big";
   export interface FreeObject extends BaseObject {}
   export type JsonEmpty = "ReturnEmpty" | "ReturnTarget" | "Error" | "UseNull" | "DeleteKey";
-  export interface $Object extends BaseObject {}
   export namespace enc {
     export type Base64Alphabet = "standard" | "urlsafe";
   }
@@ -70,6 +70,199 @@ export namespace cfg {
   export interface Trust extends AuthMethod {}
   export interface mTLS extends AuthMethod {
     "transports": ConnectionTransport[];
+  }
+}
+export namespace $default {
+  export interface Account extends std.$Object {
+    "provider": string;
+    "providerAccountId": string;
+    "access_token"?: string | null;
+    "createdAt"?: Date | null;
+    "expires_at"?: number | null;
+    "id_token"?: string | null;
+    "refresh_token"?: string | null;
+    "scope"?: string | null;
+    "session_state"?: string | null;
+    "token_type"?: string | null;
+    "type": string;
+    "user": User;
+    "userId": string;
+  }
+  export interface Ideas extends std.$Object {
+    "createdAt": number;
+    "description": string;
+    "domainList"?: unknown[] | null;
+    "keyword": string;
+    "keywords"?: unknown[] | null;
+    "redditRelatedPosts"?: unknown[] | null;
+    "slug": string;
+    "topCompetitors"?: unknown[] | null;
+    "userId": string;
+  }
+  export interface Session extends std.$Object {
+    "user": User;
+    "userId": string;
+    "createdAt"?: Date | null;
+    "expires": Date;
+    "sessionToken": string;
+  }
+  export interface User extends std.$Object {
+    "createdAt"?: Date | null;
+    "email": string;
+    "emailVerified"?: Date | null;
+    "image"?: string | null;
+    "name"?: string | null;
+    "accounts": Account[];
+    "sessions": Session[];
+  }
+  export interface VerificationToken extends std.$Object {
+    "identifier": string;
+    "token": string;
+    "createdAt"?: Date | null;
+    "expires": Date;
+  }
+}
+import Account = $default.Account;
+import Ideas = $default.Ideas;
+import Session = $default.Session;
+import User = $default.User;
+import VerificationToken = $default.VerificationToken;
+export type {
+  Account,
+  Ideas,
+  Session,
+  User,
+  VerificationToken
+};
+export namespace ext {
+  export namespace auth {
+    export interface ProviderConfig extends cfg.ConfigObject {
+      "name": string;
+    }
+    export interface OAuthProviderConfig extends ProviderConfig {
+      "name": string;
+      "secret": string;
+      "client_id": string;
+      "display_name": string;
+      "additional_scope"?: string | null;
+    }
+    export interface AppleOAuthProvider extends OAuthProviderConfig {
+      "name": string;
+      "display_name": string;
+    }
+    export interface Auditable extends std.$Object {
+      "created_at": Date;
+      "modified_at": Date;
+    }
+    export interface AuthConfig extends cfg.ExtensionConfig {
+      "providers": ProviderConfig[];
+      "ui"?: UIConfig | null;
+      "app_name"?: string | null;
+      "logo_url"?: string | null;
+      "dark_logo_url"?: string | null;
+      "brand_color"?: string | null;
+      "auth_signing_key"?: string | null;
+      "token_time_to_live"?: edgedb.Duration | null;
+      "allowed_redirect_urls": string[];
+    }
+    export interface AzureOAuthProvider extends OAuthProviderConfig {
+      "name": string;
+      "display_name": string;
+    }
+    export interface Identity extends Auditable {
+      "issuer": string;
+      "subject": string;
+    }
+    export interface ClientTokenIdentity extends Identity {}
+    export interface DiscordOAuthProvider extends OAuthProviderConfig {
+      "name": string;
+      "display_name": string;
+    }
+    export interface Factor extends Auditable {
+      "identity": LocalIdentity;
+    }
+    export interface EmailFactor extends Factor {
+      "email": string;
+      "verified_at"?: Date | null;
+    }
+    export interface EmailPasswordFactor extends EmailFactor {
+      "email": string;
+      "password_hash": string;
+    }
+    export interface EmailPasswordProviderConfig extends ProviderConfig {
+      "name": string;
+      "require_verification": boolean;
+    }
+    export type FlowType = "PKCE" | "Implicit";
+    export interface GitHubOAuthProvider extends OAuthProviderConfig {
+      "name": string;
+      "display_name": string;
+    }
+    export interface GoogleOAuthProvider extends OAuthProviderConfig {
+      "name": string;
+      "display_name": string;
+    }
+    export type JWTAlgo = "RS256" | "HS256";
+    export interface LocalIdentity extends Identity {
+      "subject": string;
+    }
+    export interface MagicLinkFactor extends EmailFactor {
+      "email": string;
+    }
+    export interface MagicLinkProviderConfig extends ProviderConfig {
+      "name": string;
+      "token_time_to_live": edgedb.Duration;
+    }
+    export interface PKCEChallenge extends Auditable {
+      "challenge": string;
+      "auth_token"?: string | null;
+      "refresh_token"?: string | null;
+      "identity"?: Identity | null;
+    }
+    export interface SMTPConfig extends cfg.ExtensionConfig {
+      "sender"?: string | null;
+      "host"?: string | null;
+      "port"?: number | null;
+      "username"?: string | null;
+      "password"?: string | null;
+      "security": SMTPSecurity;
+      "validate_certs": boolean;
+      "timeout_per_email": edgedb.Duration;
+      "timeout_per_attempt": edgedb.Duration;
+    }
+    export type SMTPSecurity = "PlainText" | "TLS" | "STARTTLS" | "STARTTLSOrPlainText";
+    export interface SlackOAuthProvider extends OAuthProviderConfig {
+      "name": string;
+      "display_name": string;
+    }
+    export interface UIConfig extends cfg.ConfigObject {
+      "redirect_to": string;
+      "redirect_to_on_signup"?: string | null;
+      "flow_type": FlowType;
+      "app_name"?: string | null;
+      "logo_url"?: string | null;
+      "dark_logo_url"?: string | null;
+      "brand_color"?: string | null;
+    }
+    export interface WebAuthnAuthenticationChallenge extends Auditable {
+      "challenge": Uint8Array;
+      "factors": WebAuthnFactor[];
+    }
+    export interface WebAuthnFactor extends EmailFactor {
+      "user_handle": Uint8Array;
+      "credential_id": Uint8Array;
+      "public_key": Uint8Array;
+    }
+    export interface WebAuthnProviderConfig extends ProviderConfig {
+      "name": string;
+      "relying_party_origin": string;
+      "require_verification": boolean;
+    }
+    export interface WebAuthnRegistrationChallenge extends Auditable {
+      "challenge": Uint8Array;
+      "email": string;
+      "user_handle": Uint8Array;
+    }
   }
 }
 export namespace fts {
@@ -305,10 +498,10 @@ export namespace sys {
 export interface types {
   "std": {
     "BaseObject": std.BaseObject;
+    "Object": std.$Object;
     "Endian": std.Endian;
     "FreeObject": std.FreeObject;
     "JsonEmpty": std.JsonEmpty;
-    "Object": std.$Object;
     "enc": {
       "Base64Alphabet": std.enc.Base64Alphabet;
     };
@@ -331,6 +524,46 @@ export interface types {
     "SCRAM": cfg.SCRAM;
     "Trust": cfg.Trust;
     "mTLS": cfg.mTLS;
+  };
+  "default": {
+    "Account": $default.Account;
+    "Ideas": $default.Ideas;
+    "Session": $default.Session;
+    "User": $default.User;
+    "VerificationToken": $default.VerificationToken;
+  };
+  "ext": {
+    "auth": {
+      "ProviderConfig": ext.auth.ProviderConfig;
+      "OAuthProviderConfig": ext.auth.OAuthProviderConfig;
+      "AppleOAuthProvider": ext.auth.AppleOAuthProvider;
+      "Auditable": ext.auth.Auditable;
+      "AuthConfig": ext.auth.AuthConfig;
+      "AzureOAuthProvider": ext.auth.AzureOAuthProvider;
+      "Identity": ext.auth.Identity;
+      "ClientTokenIdentity": ext.auth.ClientTokenIdentity;
+      "DiscordOAuthProvider": ext.auth.DiscordOAuthProvider;
+      "Factor": ext.auth.Factor;
+      "EmailFactor": ext.auth.EmailFactor;
+      "EmailPasswordFactor": ext.auth.EmailPasswordFactor;
+      "EmailPasswordProviderConfig": ext.auth.EmailPasswordProviderConfig;
+      "FlowType": ext.auth.FlowType;
+      "GitHubOAuthProvider": ext.auth.GitHubOAuthProvider;
+      "GoogleOAuthProvider": ext.auth.GoogleOAuthProvider;
+      "JWTAlgo": ext.auth.JWTAlgo;
+      "LocalIdentity": ext.auth.LocalIdentity;
+      "MagicLinkFactor": ext.auth.MagicLinkFactor;
+      "MagicLinkProviderConfig": ext.auth.MagicLinkProviderConfig;
+      "PKCEChallenge": ext.auth.PKCEChallenge;
+      "SMTPConfig": ext.auth.SMTPConfig;
+      "SMTPSecurity": ext.auth.SMTPSecurity;
+      "SlackOAuthProvider": ext.auth.SlackOAuthProvider;
+      "UIConfig": ext.auth.UIConfig;
+      "WebAuthnAuthenticationChallenge": ext.auth.WebAuthnAuthenticationChallenge;
+      "WebAuthnFactor": ext.auth.WebAuthnFactor;
+      "WebAuthnProviderConfig": ext.auth.WebAuthnProviderConfig;
+      "WebAuthnRegistrationChallenge": ext.auth.WebAuthnRegistrationChallenge;
+    };
   };
   "fts": {
     "ElasticLanguage": fts.ElasticLanguage;

@@ -8,6 +8,7 @@ import type * as _sys from "./modules/sys";
 import type * as _stdenc from "./modules/std/enc";
 import type * as _schema from "./modules/schema";
 import type * as _fts from "./modules/fts";
+import type * as _extauth from "./modules/ext/auth";
 import type * as _cfg from "./modules/cfg";
 import type * as _cal from "./modules/cal";
 export type scalarAssignableBy<T extends $.ScalarType> =
@@ -51,6 +52,9 @@ export type scalarAssignableBy<T extends $.ScalarType> =
   T extends _fts.$LuceneLanguage ? _fts.$LuceneLanguage : 
   T extends _fts.$Language ? _fts.$Language : 
   T extends _fts.$ElasticLanguage ? _fts.$ElasticLanguage : 
+  T extends _extauth.$SMTPSecurity ? _extauth.$SMTPSecurity : 
+  T extends _extauth.$JWTAlgo ? _extauth.$JWTAlgo : 
+  T extends _extauth.$FlowType ? _extauth.$FlowType : 
   T extends _cfg.$memory ? _cfg.$memory : 
   T extends _cfg.$QueryCacheMode ? _cfg.$QueryCacheMode : 
   T extends _cfg.$ConnectionTransport ? _cfg.$ConnectionTransport : 
@@ -103,6 +107,9 @@ export type scalarCastableFrom<T extends $.ScalarType> =
   T extends _fts.$LuceneLanguage ? _fts.$LuceneLanguage : 
   T extends _fts.$Language ? _fts.$Language : 
   T extends _fts.$ElasticLanguage ? _fts.$ElasticLanguage : 
+  T extends _extauth.$SMTPSecurity ? _extauth.$SMTPSecurity : 
+  T extends _extauth.$JWTAlgo ? _extauth.$JWTAlgo : 
+  T extends _extauth.$FlowType ? _extauth.$FlowType : 
   T extends _cfg.$memory ? _cfg.$memory : 
   T extends _cfg.$QueryCacheMode ? _cfg.$QueryCacheMode : 
   T extends _cfg.$ConnectionTransport ? _cfg.$ConnectionTransport : 
@@ -357,6 +364,24 @@ type getSharedParentScalar<A, B> =
   :
   A extends _fts.$ElasticLanguage ?
     B extends _fts.$ElasticLanguage ?
+    B
+    :
+    never
+  :
+  A extends _extauth.$SMTPSecurity ?
+    B extends _extauth.$SMTPSecurity ?
+    B
+    :
+    never
+  :
+  A extends _extauth.$JWTAlgo ?
+    B extends _extauth.$JWTAlgo ?
+    B
+    :
+    never
+  :
+  A extends _extauth.$FlowType ?
+    B extends _extauth.$FlowType ?
     B
     :
     never
@@ -674,6 +699,24 @@ function getSharedParentScalar<A extends $.ScalarType, B extends $.ScalarType>(a
     }
   if (a.__name__ === "fts::ElasticLanguage") {
     if(b.__name__ === "fts::ElasticLanguage") {
+      return b;
+    }
+    throw new Error(`Types are not castable: ${a.__name__}, ${b.__name__}`);
+    }
+  if (a.__name__ === "ext::auth::SMTPSecurity") {
+    if(b.__name__ === "ext::auth::SMTPSecurity") {
+      return b;
+    }
+    throw new Error(`Types are not castable: ${a.__name__}, ${b.__name__}`);
+    }
+  if (a.__name__ === "ext::auth::JWTAlgo") {
+    if(b.__name__ === "ext::auth::JWTAlgo") {
+      return b;
+    }
+    throw new Error(`Types are not castable: ${a.__name__}, ${b.__name__}`);
+    }
+  if (a.__name__ === "ext::auth::FlowType") {
+    if(b.__name__ === "ext::auth::FlowType") {
       return b;
     }
     throw new Error(`Types are not castable: ${a.__name__}, ${b.__name__}`);

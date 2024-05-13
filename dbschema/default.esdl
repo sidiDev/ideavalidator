@@ -64,6 +64,10 @@ module default {
         constraint exclusive on ((.identifier, .token));
     }
 
+    type Test {
+        name: str
+    }
+
     type Ideas {
         required keyword: str;
         required slug: str;

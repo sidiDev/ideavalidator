@@ -98,15 +98,6 @@ const $BaseObject = $.makeType<$BaseObject>(_.spec, "0d14e49f-d9f9-51f0-b8f4-c43
 
 const BaseObject: $.$expr_PathNode<$.TypeSet<$BaseObject, $.Cardinality.Many>, null> = _.syntax.$PathNode($.$toSet($BaseObject, $.Cardinality.Many), null);
 
-export type $FreeObjectλShape = $.typeutil.flatten<$BaseObjectλShape & {
-}>;
-type $FreeObject = $.ObjectType<"std::FreeObject", $FreeObjectλShape, null, [
-  ...$BaseObject['__exclusives__'],
-]>;
-const $FreeObject = $.makeType<$FreeObject>(_.spec, "3b741934-07ef-5b95-b7d6-cdc864fd2ae8", _.syntax.literal);
-
-const FreeObject: $.$expr_PathNode<$.TypeSet<$FreeObject, $.Cardinality.One>, null> = _.syntax.$PathNode($.$toSet($FreeObject, $.Cardinality.One), null);
-
 export type $Object_8ce8c71ee4fa5f73840c22d7eaa58588λShape = $.typeutil.flatten<$BaseObjectλShape & {
 }>;
 type $Object_8ce8c71ee4fa5f73840c22d7eaa58588 = $.ObjectType<"std::Object", $Object_8ce8c71ee4fa5f73840c22d7eaa58588λShape, null, [
@@ -116,6 +107,15 @@ export type $Object = $Object_8ce8c71ee4fa5f73840c22d7eaa58588
 const $Object_8ce8c71ee4fa5f73840c22d7eaa58588 = $.makeType<$Object_8ce8c71ee4fa5f73840c22d7eaa58588>(_.spec, "8ce8c71e-e4fa-5f73-840c-22d7eaa58588", _.syntax.literal);
 
 const Object_8ce8c71ee4fa5f73840c22d7eaa58588: $.$expr_PathNode<$.TypeSet<$Object_8ce8c71ee4fa5f73840c22d7eaa58588, $.Cardinality.Many>, null> = _.syntax.$PathNode($.$toSet($Object_8ce8c71ee4fa5f73840c22d7eaa58588, $.Cardinality.Many), null);
+
+export type $FreeObjectλShape = $.typeutil.flatten<$BaseObjectλShape & {
+}>;
+type $FreeObject = $.ObjectType<"std::FreeObject", $FreeObjectλShape, null, [
+  ...$BaseObject['__exclusives__'],
+]>;
+const $FreeObject = $.makeType<$FreeObject>(_.spec, "3b741934-07ef-5b95-b7d6-cdc864fd2ae8", _.syntax.literal);
+
+const FreeObject: $.$expr_PathNode<$.TypeSet<$FreeObject, $.Cardinality.One>, null> = _.syntax.$PathNode($.$toSet($FreeObject, $.Cardinality.One), null);
 
 type assert_singleλFuncExpr<
   NamedArgs extends {
@@ -4919,7 +4919,7 @@ function sequence_next(...args: any[]) {
 
 
 
-export { Endian, JsonEmpty, bigint, bool, bytes, datetime, decimal, duration, float32, float64, int16, int32, int64, json, $sequence, str, uuid, number, $BaseObject, BaseObject, $FreeObject, FreeObject, $Object_8ce8c71ee4fa5f73840c22d7eaa58588, Object_8ce8c71ee4fa5f73840c22d7eaa58588 };
+export { Endian, JsonEmpty, bigint, bool, bytes, datetime, decimal, duration, float32, float64, int16, int32, int64, json, $sequence, str, uuid, number, $BaseObject, BaseObject, $Object_8ce8c71ee4fa5f73840c22d7eaa58588, Object_8ce8c71ee4fa5f73840c22d7eaa58588, $FreeObject, FreeObject };
 
 export type { $anyscalar, $anypoint, $anydiscrete, $anycontiguous, $anyreal, $anyfloat, $anyint, $anynumeric };
 
@@ -4941,8 +4941,8 @@ type __defaultExports = {
   "str": typeof str;
   "uuid": typeof uuid;
   "BaseObject": typeof BaseObject;
-  "FreeObject": typeof FreeObject;
   "Object": typeof Object_8ce8c71ee4fa5f73840c22d7eaa58588;
+  "FreeObject": typeof FreeObject;
   "assert_single": typeof assert_single;
   "assert_exists": typeof assert_exists;
   "assert_distinct": typeof assert_distinct;
@@ -5058,8 +5058,8 @@ const __defaultExports: __defaultExports = {
   "str": str,
   "uuid": uuid,
   "BaseObject": BaseObject,
-  "FreeObject": FreeObject,
   "Object": Object_8ce8c71ee4fa5f73840c22d7eaa58588,
+  "FreeObject": FreeObject,
   "assert_single": assert_single,
   "assert_exists": assert_exists,
   "assert_distinct": assert_distinct,
