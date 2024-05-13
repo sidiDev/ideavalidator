@@ -16,9 +16,20 @@ export async function generateMetadata({ params }: Params) {
     data: { response },
   } = await axios.get(`${url}/api/methods/get/${params.slug}`);
 
+  const title = response ? `${response.keyword} - Idea validator` : "";
+  const description = response ? response.description : "";
+
   return {
-    title: response ? `${response.keyword} - Idea validator` : "",
-    description: response ? response.description : "",
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+    },
+    twitter: {
+      title,
+      description,
+    },
   };
 }
 
