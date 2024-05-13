@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   title: "Idea validator - How to validate your startup idea",
   description:
     "How To Test Your Business and Product Ideas and make quick, painless, and informed judgments about your idea so that you know whether it's worth pursuing.",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
