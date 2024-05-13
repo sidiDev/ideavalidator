@@ -64,43 +64,12 @@ module default {
         constraint exclusive on ((.identifier, .token));
     }
 
-    type Domain {
-    required domain: str;
-    required name: str;
-    }
-
-    type KeywordMetrics {
-    required avgSearches: int64;
-    required c: str;
-    required cIx: int64;
-    required high: int64;
-    required low: int64;
-    }
-
-    type Keywords {
-    required text: str;
-    required metrics: KeywordMetrics;
-    }
-
-    type Competitors {
-    required link: str;
-    required name: str;
-    required description: str;
-    }
-
-    type RedditRelatedPostData {
-    required subreddit: str;
-    required title: str;
-    required selftext: str;
-    required url: str;
-    required created: int64;
-    }
-
     type Ideas {
         required keyword: str;
         required slug: str;
         required userId: str;
         required description: str;
+        required createdAt: datetime;
         keywords: array<json>;
         domainList: array<json>;
         topCompetitors: array<json>;

@@ -101,7 +101,3 @@ export async function getRedditRelatedPosts({
       setRedditRelatedPosts(children);
     });
 }
-
-// Delete Everything
-// const query = e.delete(e.Ideas, () => ({}));
-// const result = await query.run(client);

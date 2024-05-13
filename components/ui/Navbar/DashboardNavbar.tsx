@@ -5,27 +5,30 @@ import NavLink from "./NavLink";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { signOut, useSession } from "next-auth/react";
 import { useState } from "react";
 import { IconLoading } from "@/components/icons";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 
 export default function DashboardNavbar() {
   const { data: session } = useSession();
 
   const [isLogoutActive, setLogoutActive] = useState(false);
-  const [isFeedbackFormOpen, setOpenFeedbackForm] = useState(false);
-
-  const pathname = usePathname();
 
   return (
     <header className="border-b top-0 bg-white xl:sticky">
-      <nav className="custom-screen-lg py-2 flex items-center justify-between flex-wrap text-sm sm:flex-nowrap">
+      <nav className="custom-screen-lg flex gap-x-14 items-center justify-between flex-wrap text-sm sm:flex-nowrap">
         <div className="">
           <Brand href="/dashboard" />
         </div>
+        <ul className="flex-1">
+          <NavLink
+            href="/dashboard/ideas"
+            className="inline-block"
+            active="border-neutral-800"
+          >
+            Ideas
+          </NavLink>
+        </ul>
         <div className="order-2 flex-shrink-0 sm:order-3">
           <DropdownMenu.Root>
             <DropdownMenu.Trigger className="outline-none">
@@ -46,19 +49,19 @@ export default function DashboardNavbar() {
               <DropdownMenu.Content
                 side="bottom"
                 align="end"
-                className="w-60 mt-3 border shadow bg-white rounded-xl left-0 text-zinc-700 text-sm z-20"
+                className="w-60 mt-3 border shadow bg-white rounded-xl left-0 text-neutral-700 text-sm z-20"
               >
-                <DropdownMenu.Label className="px-4 pt-4 text-zinc-800">
+                <DropdownMenu.Label className="px-4 pt-4 text-neutral-800">
                   Signed in with
                 </DropdownMenu.Label>
-                <p className="text-zinc-600 px-4 py-2">
+                <p className="text-neutral-600 px-4 py-2">
                   {session?.user?.email}
                 </p>
                 <DropdownMenu.Item asChild className="outline-none">
                   <Link
                     href="https://twitter.com/sidi_jeddou_dev"
                     target="_balnk"
-                    className="block w-full px-4 py-2 hover:bg-zinc-100 duration-150 text-left"
+                    className="block w-full px-4 py-2 hover:bg-neutral-100 duration-150 text-left"
                   >
                     Support
                   </Link>
@@ -66,7 +69,7 @@ export default function DashboardNavbar() {
                 <DropdownMenu.Item asChild className="outline-none">
                   <div className="block py-1 border-t">
                     <button
-                      className="block w-full px-4 py-2 hover:bg-zinc-100 duration-150 text-left"
+                      className="block w-full px-4 py-2 hover:bg-neutral-100 duration-150 text-left"
                       onClick={() => {
                         setLogoutActive(true);
                         signOut({ callbackUrl: "/" });

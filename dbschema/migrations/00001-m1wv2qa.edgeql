@@ -1,6 +1,8 @@
-CREATE MIGRATION m1k5id5qd4akyx3po4kr4haeogp4h7r7l7hveticoiae3xlrsy3c5a
-    ONTO m1gejt3jtdbq4ixv25ocfklxo55gvsbtyhdkr2hyrbcis3jeo4osrq
+CREATE MIGRATION m1wv2qaxcjgv4bbacuzlldkfdpnplsczbzhoouqhrn4svfby7cdriq
+    ONTO initial
 {
+  CREATE EXTENSION pgcrypto VERSION '1.3';
+  CREATE EXTENSION auth VERSION '1.0';
   CREATE FUTURE nonrecursive_access_policies;
   CREATE TYPE default::Account {
       CREATE REQUIRED PROPERTY provider: std::str;
@@ -39,6 +41,17 @@ CREATE MIGRATION m1k5id5qd4akyx3po4kr4haeogp4h7r7l7hveticoiae3xlrsy3c5a
   };
   ALTER TYPE default::User {
       CREATE MULTI LINK accounts := (.<user[IS default::Account]);
+  };
+  CREATE TYPE default::Ideas {
+      CREATE REQUIRED PROPERTY createdAt: std::datetime;
+      CREATE REQUIRED PROPERTY description: std::str;
+      CREATE PROPERTY domainList: array<std::json>;
+      CREATE REQUIRED PROPERTY keyword: std::str;
+      CREATE PROPERTY keywords: array<std::json>;
+      CREATE PROPERTY redditRelatedPosts: array<std::json>;
+      CREATE REQUIRED PROPERTY slug: std::str;
+      CREATE PROPERTY topCompetitors: array<std::json>;
+      CREATE REQUIRED PROPERTY userId: std::str;
   };
   CREATE TYPE default::Session {
       CREATE REQUIRED LINK user: default::User {

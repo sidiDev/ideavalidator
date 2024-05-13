@@ -22,7 +22,7 @@ export default function NavLink({
 
   return (
     <li
-      className={`py-3 border-b-[1.5px] ${
+      className={`py-3 border-b-[1.5px] inline-block ${
         isActive ? activeClass : "border-transparent"
       }`}
     >

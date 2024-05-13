@@ -29,6 +29,7 @@ export async function POST(req: Request) {
     ),
     slug: slug,
     description: ideaDescription,
+    createdAt: Date.now(),
   });
 
   const result = await query.run(client);
