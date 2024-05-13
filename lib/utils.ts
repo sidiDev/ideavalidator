@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 export const url =
   process.env.NODE_ENV == "development"
     ? "http://localhost:3000"
-    : "ideavalidator.org";
+    : "https://ideavalidator.org";
 
 // AI_BASE_URL: https://api.perplexity.ai
 // AI_BASE_URL: https://api.groq.com/openai/v1
