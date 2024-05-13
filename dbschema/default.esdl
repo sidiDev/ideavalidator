@@ -64,16 +64,12 @@ module default {
         constraint exclusive on ((.identifier, .token));
     }
 
-    type Test {
-        name: str
-    }
-
     type Ideas {
         required keyword: str;
         required slug: str;
         required userId: str;
         required description: str;
-        required createdAt: int32;
+        required createdAt: int64;
         keywords: array<json>;
         domainList: array<json>;
         topCompetitors: array<json>;

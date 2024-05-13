@@ -106,6 +106,9 @@ export namespace $default {
     "expires": Date;
     "sessionToken": string;
   }
+  export interface Test extends std.$Object {
+    "name"?: string | null;
+  }
   export interface User extends std.$Object {
     "createdAt"?: Date | null;
     "email": string;
@@ -125,12 +128,14 @@ export namespace $default {
 import Account = $default.Account;
 import Ideas = $default.Ideas;
 import Session = $default.Session;
+import Test = $default.Test;
 import User = $default.User;
 import VerificationToken = $default.VerificationToken;
 export type {
   Account,
   Ideas,
   Session,
+  Test,
   User,
   VerificationToken
 };
@@ -529,6 +534,7 @@ export interface types {
     "Account": $default.Account;
     "Ideas": $default.Ideas;
     "Session": $default.Session;
+    "Test": $default.Test;
     "User": $default.User;
     "VerificationToken": $default.VerificationToken;
   };

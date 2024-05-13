@@ -64,6 +64,16 @@ const $Session = $.makeType<$Session>(_.spec, "cc2d83b0-10d0-11ef-a88f-df7007353
 
 const Session: $.$expr_PathNode<$.TypeSet<$Session, $.Cardinality.Many>, null> = _.syntax.$PathNode($.$toSet($Session, $.Cardinality.Many), null);
 
+export type $TestλShape = $.typeutil.flatten<_std.$Object_8ce8c71ee4fa5f73840c22d7eaa58588λShape & {
+  "name": $.PropertyDesc<_std.$str, $.Cardinality.AtMostOne, false, false, false, false>;
+}>;
+type $Test = $.ObjectType<"default::Test", $TestλShape, null, [
+  ..._std.$Object_8ce8c71ee4fa5f73840c22d7eaa58588['__exclusives__'],
+]>;
+const $Test = $.makeType<$Test>(_.spec, "48729e18-10d3-11ef-b790-ed71f70d2975", _.syntax.literal);
+
+const Test: $.$expr_PathNode<$.TypeSet<$Test, $.Cardinality.Many>, null> = _.syntax.$PathNode($.$toSet($Test, $.Cardinality.Many), null);
+
 export type $UserλShape = $.typeutil.flatten<_std.$Object_8ce8c71ee4fa5f73840c22d7eaa58588λShape & {
   "createdAt": $.PropertyDesc<_std.$datetime, $.Cardinality.AtMostOne, false, false, false, true>;
   "email": $.PropertyDesc<_std.$str, $.Cardinality.One, true, false, false, false>;
@@ -101,12 +111,13 @@ const VerificationToken: $.$expr_PathNode<$.TypeSet<$VerificationToken, $.Cardin
 
 
 
-export { $Account, Account, $Ideas, Ideas, $Session, Session, $User, User, $VerificationToken, VerificationToken };
+export { $Account, Account, $Ideas, Ideas, $Session, Session, $Test, Test, $User, User, $VerificationToken, VerificationToken };
 
 type __defaultExports = {
   "Account": typeof Account;
   "Ideas": typeof Ideas;
   "Session": typeof Session;
+  "Test": typeof Test;
   "User": typeof User;
   "VerificationToken": typeof VerificationToken
 };
@@ -114,6 +125,7 @@ const __defaultExports: __defaultExports = {
   "Account": Account,
   "Ideas": Ideas,
   "Session": Session,
+  "Test": Test,
   "User": User,
   "VerificationToken": VerificationToken
 };
