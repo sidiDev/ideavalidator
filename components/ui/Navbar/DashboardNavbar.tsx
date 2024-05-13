@@ -54,7 +54,7 @@ export default function DashboardNavbar() {
                 <DropdownMenu.Label className="px-4 pt-4 text-neutral-800">
                   Signed in with
                 </DropdownMenu.Label>
-                <p className="text-neutral-600 px-4 py-2">
+                <p className="text-neutral-600 px-4 py-2 truncate">
                   {session?.user?.email}
                 </p>
                 <DropdownMenu.Item asChild className="outline-none">
