@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Params) {
     data: { response },
   } = await axios.get(`${url}/api/methods/get/${params.slug}`);
 
-  const title = response ? `${response.keyword} - Idea validator` : "";
+  const title = response ? `${response.keywords.keyword} - Idea validator` : "";
   const description = response ? response.description : "";
 
   return {
@@ -50,18 +50,14 @@ export default async function Page({ params }: Params) {
       <div className="mt-12 max-w-screen-md mx-auto px-4">
         <div className="space-y-12 mt-24 pb-12">
           <KeywordSearchCard
-            keywords={response.keywords}
-            keyword={response.keyword}
+            keywords={response.keywords.keywords}
+            keyword={response.keywords.keyword}
           />
           <div>
             <DomainsList list={response.domainList} />
           </div>
           <TopCompetitors list={response.topCompetitors} />
-          <RedditRelatedPosts
-            list={response.redditRelatedPosts.map(
-              (item: RedditRelatedPostDataType) => ({ data: item })
-            )}
-          />
+          <RedditRelatedPosts list={response.redditRelatedPosts} />
         </div>
         <ShareButton
           slug={response.slug}

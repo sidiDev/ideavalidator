@@ -21,6 +21,7 @@ export type RedditRelatedPostDataType = {
     selftext: string;
     url: string;
     created: number;
+    selftext_html: string;
   };
 };
 

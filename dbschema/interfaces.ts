@@ -88,16 +88,58 @@ export namespace $default {
     "user": User;
     "userId": string;
   }
+  export interface Competitor extends std.$Object {
+    "description": string;
+    "link": string;
+    "name": string;
+  }
+  export interface Domain extends std.$Object {
+    "domain": string;
+    "name": string;
+  }
+  export interface Growth extends std.$Object {
+    "m12": number;
+    "m3": number;
+    "m6": number;
+  }
   export interface Ideas extends std.$Object {
+    "topCompetitors": Competitor[];
+    "domainList": Domain[];
+    "keywords": Keywords;
+    "redditRelatedPosts": RedditPost[];
     "createdAt": number;
     "description": string;
-    "domainList"?: unknown[] | null;
-    "keyword": string;
-    "keywords"?: unknown[] | null;
-    "redditRelatedPosts"?: unknown[] | null;
     "slug": string;
-    "topCompetitors"?: unknown[] | null;
     "userId": string;
+  }
+  export interface Keyword extends std.$Object {
+    "metrics": Metrics;
+    "text": string;
+  }
+  export interface Keywords extends std.$Object {
+    "keywords": Keyword[];
+    "keyword": string;
+  }
+  export interface Metrics extends std.$Object {
+    "g": Growth;
+    "avgSearches": number;
+    "c": string;
+    "cIx": number;
+    "high": number;
+    "low": number;
+  }
+  export interface MockedType extends std.$Object {
+    "name"?: string | null;
+  }
+  export interface RedditData extends std.$Object {
+    "created": number;
+    "selftext": string;
+    "subreddit": string;
+    "title": string;
+    "url": string;
+  }
+  export interface RedditPost extends std.$Object {
+    "data": RedditData;
   }
   export interface Session extends std.$Object {
     "user": User;
@@ -105,9 +147,6 @@ export namespace $default {
     "createdAt"?: Date | null;
     "expires": Date;
     "sessionToken": string;
-  }
-  export interface Test extends std.$Object {
-    "name"?: string | null;
   }
   export interface User extends std.$Object {
     "createdAt"?: Date | null;
@@ -126,16 +165,32 @@ export namespace $default {
   }
 }
 import Account = $default.Account;
+import Competitor = $default.Competitor;
+import Domain = $default.Domain;
+import Growth = $default.Growth;
 import Ideas = $default.Ideas;
+import Keyword = $default.Keyword;
+import Keywords = $default.Keywords;
+import Metrics = $default.Metrics;
+import MockedType = $default.MockedType;
+import RedditData = $default.RedditData;
+import RedditPost = $default.RedditPost;
 import Session = $default.Session;
-import Test = $default.Test;
 import User = $default.User;
 import VerificationToken = $default.VerificationToken;
 export type {
   Account,
+  Competitor,
+  Domain,
+  Growth,
   Ideas,
+  Keyword,
+  Keywords,
+  Metrics,
+  MockedType,
+  RedditData,
+  RedditPost,
   Session,
-  Test,
   User,
   VerificationToken
 };
@@ -532,9 +587,17 @@ export interface types {
   };
   "default": {
     "Account": $default.Account;
+    "Competitor": $default.Competitor;
+    "Domain": $default.Domain;
+    "Growth": $default.Growth;
     "Ideas": $default.Ideas;
+    "Keyword": $default.Keyword;
+    "Keywords": $default.Keywords;
+    "Metrics": $default.Metrics;
+    "MockedType": $default.MockedType;
+    "RedditData": $default.RedditData;
+    "RedditPost": $default.RedditPost;
     "Session": $default.Session;
-    "Test": $default.Test;
     "User": $default.User;
     "VerificationToken": $default.VerificationToken;
   };

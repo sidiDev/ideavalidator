@@ -8,6 +8,9 @@ export async function POST(request: Request) {
 
   const query = e.select(e.Ideas, (idea) => ({
     ...e.Ideas["*"],
+    keywords: {
+      keyword: true,
+    },
     filter: e.op(idea.userId, "=", userId),
   }));
 

@@ -65,15 +65,62 @@ module default {
     }
 
     type Ideas {
-        required keyword: str;
-        required slug: str;
+        required keywords: Keywords;
         required userId: str;
+        required slug: str;
         required description: str;
         required createdAt: int64;
-        keywords: array<json>;
-        domainList: array<json>;
-        topCompetitors: array<json>;
-        redditRelatedPosts: array<json>;
+        multi domainList: Domain;
+        multi topCompetitors: Competitor;
+        multi redditRelatedPosts: RedditPost;
+    }
+
+    type Keywords {
+        required keyword: str;
+        multi keywords: Keyword;
+    }
+
+    type Keyword {
+        required metrics: Metrics;
+        required text: str;
+    }
+
+    type Metrics {
+        required c: str;
+        required avgSearches: int64;
+        required cIx: int64;
+        required low: int64;
+        required high: int64;
+        required g: Growth;
+    }
+
+    type Growth {
+        required m3: int64;
+        required m6: int64;
+        required m12: int64;
+    }
+
+    type Domain {
+        required name: str;
+        required domain: str;
+    }
+
+    type Competitor {
+        required link: str;
+        required name: str;
+        required description: str;
+    }
+
+    type RedditPost {
+        required data: RedditData;
+    }
+
+    type RedditData {
+        required title: str;
+        required subreddit: str;
+        required selftext: str;
+        required created: int64;
+        required url: str;
     }
 }
 

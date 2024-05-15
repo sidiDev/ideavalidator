@@ -12,6 +12,33 @@ export async function GET(request: Request, context: { params: Params }) {
 
   const query = e.select(e.Ideas, (idea) => ({
     ...e.Ideas["*"],
+    topCompetitors: {
+      name: true,
+      link: true,
+      description: true,
+    },
+    domainList: {
+      name: true,
+      domain: true,
+    },
+    keywords: {
+      keyword: true,
+      keywords: {
+        text: true,
+        metrics: {
+          avgSearches: true,
+        },
+      },
+    },
+    redditRelatedPosts: {
+      data: {
+        title: true,
+        subreddit: true,
+        selftext: true,
+        created: true,
+        url: true,
+      },
+    },
     filter_single: e.op(idea.slug, "=", slug),
   }));
 

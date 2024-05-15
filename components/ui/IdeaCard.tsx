@@ -15,21 +15,21 @@ import {
   DialogClose,
 } from "@/components/ui/dialog";
 import { EllipsisVertical } from "lucide-react";
-import { Idea } from "@/app/dashboard/ideas/page";
 import { url } from "@/lib/utils";
 import { useState } from "react";
 import { Button } from "./button";
 import { IconLoading } from "../icons";
 import axios from "axios";
+import { Ideas } from "@/dbschema/interfaces";
 
 export default function IdeaCard({
   item,
   ideas,
   setIdeas,
 }: {
-  item: Idea;
-  ideas: Idea[];
-  setIdeas: (data: Idea[]) => void;
+  item: Ideas;
+  ideas: Ideas[];
+  setIdeas: (data: Ideas[]) => void;
 }) {
   const [isModalOpen, setOpen] = useState<boolean>(false);
   const [isDeleting, setDeleting] = useState<boolean>(false);
@@ -49,7 +49,9 @@ export default function IdeaCard({
     <li className="py-6 flex items-center justify-between">
       <div>
         <Link href={`${url}/p/${item.slug}`} target="blank">
-          <h2 className="font-medium text-neutral-700">{item.keyword}</h2>
+          <h2 className="font-medium text-neutral-700">
+            {item.keywords.keyword}
+          </h2>
         </Link>
         <p className="mt-1 text-neutral-600 text-sm">{item.description}</p>
       </div>

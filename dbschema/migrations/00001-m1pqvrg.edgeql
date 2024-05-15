@@ -1,4 +1,4 @@
-CREATE MIGRATION m1o66zfwvmxnnugy4aulwtdhuk2bcjpgsvxie65zceu523syfcwbaa
+CREATE MIGRATION m1pqvrgucwhyol44niq3atqnc6odf3rn2p6jwndvassrhtpp2eoq4a
     ONTO initial
 {
   CREATE EXTENSION pgcrypto VERSION '1.3';
@@ -42,16 +42,58 @@ CREATE MIGRATION m1o66zfwvmxnnugy4aulwtdhuk2bcjpgsvxie65zceu523syfcwbaa
   ALTER TYPE default::User {
       CREATE MULTI LINK accounts := (.<user[IS default::Account]);
   };
-  CREATE TYPE default::Ideas {
-      CREATE REQUIRED PROPERTY createdAt: std::int32;
+  CREATE TYPE default::Competitor {
       CREATE REQUIRED PROPERTY description: std::str;
-      CREATE PROPERTY domainList: array<std::json>;
+      CREATE REQUIRED PROPERTY link: std::str;
+      CREATE REQUIRED PROPERTY name: std::str;
+  };
+  CREATE TYPE default::Domain {
+      CREATE REQUIRED PROPERTY domain: std::str;
+      CREATE REQUIRED PROPERTY name: std::str;
+  };
+  CREATE TYPE default::Growth {
+      CREATE REQUIRED PROPERTY m12: std::int64;
+      CREATE REQUIRED PROPERTY m3: std::int64;
+      CREATE REQUIRED PROPERTY m6: std::int64;
+  };
+  CREATE TYPE default::Metrics {
+      CREATE REQUIRED LINK g: default::Growth;
+      CREATE REQUIRED PROPERTY avgSearches: std::int64;
+      CREATE REQUIRED PROPERTY c: std::str;
+      CREATE REQUIRED PROPERTY cIx: std::int64;
+      CREATE REQUIRED PROPERTY high: std::int64;
+      CREATE REQUIRED PROPERTY low: std::int64;
+  };
+  CREATE TYPE default::Keyword {
+      CREATE REQUIRED LINK metrics: default::Metrics;
+      CREATE REQUIRED PROPERTY text: std::str;
+  };
+  CREATE TYPE default::Keywords {
+      CREATE MULTI LINK keywords: default::Keyword;
       CREATE REQUIRED PROPERTY keyword: std::str;
-      CREATE PROPERTY keywords: array<std::json>;
-      CREATE PROPERTY redditRelatedPosts: array<std::json>;
+  };
+  CREATE TYPE default::RedditData {
+      CREATE REQUIRED PROPERTY created: std::int64;
+      CREATE REQUIRED PROPERTY selftext: std::str;
+      CREATE REQUIRED PROPERTY subreddit: std::str;
+      CREATE REQUIRED PROPERTY title: std::str;
+      CREATE REQUIRED PROPERTY url: std::str;
+  };
+  CREATE TYPE default::RedditPost {
+      CREATE REQUIRED LINK data: default::RedditData;
+  };
+  CREATE TYPE default::Ideas {
+      CREATE MULTI LINK topCompetitors: default::Competitor;
+      CREATE MULTI LINK domainList: default::Domain;
+      CREATE REQUIRED LINK keywords: default::Keywords;
+      CREATE MULTI LINK redditRelatedPosts: default::RedditPost;
+      CREATE REQUIRED PROPERTY createdAt: std::int64;
+      CREATE REQUIRED PROPERTY description: std::str;
       CREATE REQUIRED PROPERTY slug: std::str;
-      CREATE PROPERTY topCompetitors: array<std::json>;
       CREATE REQUIRED PROPERTY userId: std::str;
+  };
+  CREATE TYPE default::MockedType {
+      CREATE PROPERTY name: std::str;
   };
   CREATE TYPE default::Session {
       CREATE REQUIRED LINK user: default::User {

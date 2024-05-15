@@ -10,19 +10,12 @@ import { Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import ButtonLogin from "@/components/ui/ButtonLogin";
-
-export type Idea = {
-  id: string;
-  slug: string;
-  keyword: string;
-  description: string;
-  createdAt: Date;
-};
+import { Ideas } from "@/dbschema/interfaces";
 
 export default function Page() {
   const { data: session } = useSession();
 
-  const [ideas, setIdeas] = useState<Idea[]>([]);
+  const [ideas, setIdeas] = useState<Ideas[]>([]);
   const [isLoading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
