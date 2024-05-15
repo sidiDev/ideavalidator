@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Idea validator project built using EdgeDB and Vercel AI SDK
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository by running the following command:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/sidiDev/ideavalidator.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. After cloning the repository, navigate to the project directory:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd ideavalidator
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## EdgeDB Setup
 
-## Learn More
+This project uses [EdgeDB](https://edgedb.com/) as a database. You can install it by following the instructions:
 
-To learn more about Next.js, take a look at the following resources:
+- [Install EdgeDB CLI](https://www.edgedb.com/docs/intro/cli)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+After installing the CLI, you can initialize the project by running the following command:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+edgedb project init
+```
 
-## Deploy on Vercel
+Next, you can apply the schema migrations by running the following command:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+edgedb migration apply
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Install Dependencies
+
+This project uses [pnpm](https://pnpm.io/) as a package manager, but you can use `npm` or `yarn`.
+
+You can install the dependencies by running the following command:
+
+```bash
+pnpm install
+```
