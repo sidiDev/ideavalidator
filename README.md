@@ -84,3 +84,13 @@ First, run the development server:
 ```bash
 pnpm dev
 ```
+
+## Learn More
+
+To learn more about the stack used in this project, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - Learn more about Next.js.
+- [EdgeDB with Next.js](https://docs.edgedb.com/guides/tutorials/nextjs_app_router) - Learn how to setup EdgeDB in Nextjs.
+- [EdgeDB Auth with Nextjs](https://authjs.dev/getting-started/adapters/edgedb) - Learn to use authjs in Nextjs with EdgeDB.
+- [Vercel AI SDK](https://sdk.vercel.ai/docs/introduction) - Learn how to use AI in your Nextjs app.
+- [Deployement](https://www.edgedb.com/blog/vercel-edgedb-branches-workflow-and-hackathon-alert) - How to deploy EdgeDB on the cloud and Nextjs on Vercel.
