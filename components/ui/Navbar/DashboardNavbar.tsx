@@ -17,7 +17,7 @@ export default function DashboardNavbar() {
   const [isLogoutActive, setLogoutActive] = useState(false);
 
   return (
-    <header className="border-b top-0 bg-white xl:sticky">
+    <header className="border-b top-0 bg-white z-30 xl:sticky">
       <nav className="custom-screen-lg flex gap-x-14 items-center justify-between flex-wrap text-sm sm:flex-nowrap">
         <div className="">
           <Brand href="/dashboard" />

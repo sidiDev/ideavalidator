@@ -51,20 +51,22 @@ export default function Dashboard() {
   }
 
   async function saveIdea() {
-    setSaveLoading(true);
-    const { data } = await axios.post("/api/methods/save", {
-      keywords,
-      domainList,
-      topCompetitors,
-      redditRelatedPosts,
-      userId: (session?.user as { id: string }).id,
-      ideaDescription,
-    });
+    if (session) {
+      setSaveLoading(true);
+      const { data } = await axios.post("/api/methods/save", {
+        keywords,
+        domainList,
+        topCompetitors,
+        redditRelatedPosts,
+        userId: (session?.user as { id: string }).id,
+        ideaDescription,
+      });
 
-    if (data.saved) {
-      router.push(`/p/${data.slug}`);
-      setSaveLoading(false);
-    }
+      if (data.saved) {
+        router.push(`/p/${data.slug}`);
+        setSaveLoading(false);
+      }
+    } else alert("Please login first to be able to save and share your ideas.");
   }
 
   useEffect(() => {
