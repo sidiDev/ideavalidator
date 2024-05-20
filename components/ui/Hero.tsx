@@ -2,7 +2,14 @@
 
 import Link from "next/link";
 import { Button } from "./button";
-import ButtonLogin from "./ButtonLogin";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export default function Hero() {
   return (
@@ -25,9 +32,19 @@ export default function Hero() {
           <Button>
             <Link href="/dashboard">Validate Idea</Link>
           </Button>
-          <Button asChild variant="outline" className="bg-white shadow-sm">
-            <Link href="/">Watch Demo</Link>
-          </Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="outline" className="bg-white shadow-sm">
+                Watch Demo
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-3xl">
+              <iframe
+                className="w-full h-56 mt-5 rounded-xl border sm:h-96"
+                src="https://www.youtube.com/embed/Fc5Gt4ORFZQ"
+              ></iframe>
+            </DialogContent>
+          </Dialog>
         </div>
       </div>
     </div>
