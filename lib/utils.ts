@@ -10,14 +10,6 @@ export const url =
     ? "http://localhost:3000"
     : "https://ideavalidator.org";
 
-// AI_BASE_URL: https://api.perplexity.ai
-// AI_BASE_URL: https://api.groq.com/openai/v1
-
-// AI_API_KEY: PERPLEXITY_API_KEY
-// AI_API_KEY: GROQ_API_KEY
-
-// MODEL: mixtral-8x7b-32768
-// MODEL: llama-3-sonar-small-32k-chat
 export const AI_FIELDS = {
   API_KEY: process.env.PERPLEXITY_API_KEY || "",
   BASE_URL: "https://api.perplexity.ai",

@@ -49,20 +49,26 @@ This project uses Google APIs for oauth for users authentication. And Google Ads
 To find these API keys below, go to [Google Cloud Console](https://console.cloud.google.com/apis/credentials)
 
 ```
-GOOGLE_CLIENT_ID
-GOOGLE_CLIENT_SECRET=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
-NEXTAUTH_SECRET
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+NEXTAUTH_SECRET=This variable is typically generated
+```
+
+For AI, we use perplexity API, You can create an account and get the API key from the [website](https://www.perplexity.ai/settings/api) but you can use anything else you want like OpenAI GPT ...etc.
+
+```bash
+PERPLEXITY_API_KEY=
 ```
 
 And to find these API keys below, go to [Google Ads](https://ads.google.com/aw/apicenter)
 
 ```
-GOOGLE_API_DEV_TOKEN
-GOOGLE_API_CUSTOMER_ID
-GOOGLE_API_KEY
-GOOGLE_API_PRIVATE_KEY
-GOOGLE_API_CLIENT_EMAIL
-GOOGLE_API_TOKEN_CLAIM_CUB
+GOOGLE_API_DEV_TOKEN=
+GOOGLE_API_CUSTOMER_ID=
+GOOGLE_API_KEY=
+GOOGLE_API_PRIVATE_KEY=
+GOOGLE_API_CLIENT_EMAIL=
+GOOGLE_API_TOKEN_CLAIM_CUB=
 ```
 
 ## Generate the Types of EdgeDB
