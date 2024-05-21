@@ -42,6 +42,7 @@
     "tailwindcss-animate": "^1.0.7",
     "url": "^0.11.3",
     "uuid": "^9.0.1",
+    "whoiser": "^1.17.1",
     "xml-js": "^1.6.11"
   },
   "devDependencies": {

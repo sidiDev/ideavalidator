@@ -1,3 +1,4 @@
+const whoiser = require("whoiser");
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { AI_FIELDS } from "@/lib/utils";
@@ -31,13 +32,48 @@ export async function POST(request: Request) {
     ],
   });
 
+  const getOnlyAvailableDomains: {}[] = [];
+
+  const availableDomains = JSON.parse(
+    response.choices[0].message.content as string
+  ).map(async (item: string) => {
+    const checkAvailability = await isDomainAvailable(item);
+    if (checkAvailability.available) {
+      getOnlyAvailableDomains.push({
+        domain: checkAvailability.domain,
+        name: item.replace(/\..*/, ""),
+      });
+    }
+  });
+
+  await Promise.all(availableDomains);
+
   // Returning JSON response
   return NextResponse.json({
-    response: JSON.parse(response.choices[0].message.content as string).map(
-      (item: string) => ({
-        name: item.replace(/\..*/, ""),
-        domain: item,
-      })
-    ),
+    response: getOnlyAvailableDomains,
   });
+}
+
+// Method to check domain availability
+export async function isDomainAvailable(domainName: string) {
+  const domainWhois = await whoiser(domainName, { follow: 1 });
+  const firstDomainWhois = whoiser.firstResult(domainWhois);
+  const firstTextLine = (firstDomainWhois.text[0] || "").toLowerCase();
+  let domainAvailability = "unknown";
+  const domainStatusArr = firstDomainWhois["Domain Status"];
+  if (
+    firstTextLine.includes(`no match for "${domainName}"`) ||
+    firstTextLine.includes("domain not found") ||
+    (domainStatusArr &&
+      domainStatusArr[0]?.toLowerCase().includes("no object found"))
+  ) {
+    domainAvailability = "available";
+  }
+  if (firstTextLine.includes("is reserved")) {
+    domainAvailability = "reserved";
+  }
+  return {
+    domain: domainName,
+    available: domainAvailability === "available",
+  };
 }

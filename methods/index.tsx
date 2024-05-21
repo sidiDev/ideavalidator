@@ -39,7 +39,7 @@ export function getDomains({
   axios
     .post("api/domain", { ideaDescription })
     .then(({ data: { response } }: { data: { response: DomainType[] } }) => {
-      const filterResponses = response.slice(0, 3);
+      const filterResponses = response.slice(0, 5);
       setDomainList(filterResponses);
     });
 }

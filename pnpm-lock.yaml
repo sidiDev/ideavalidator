@@ -88,6 +88,9 @@ dependencies:
   uuid:
     specifier: ^9.0.1
     version: 9.0.1
+  whoiser:
+    specifier: ^1.17.1
+    version: 1.17.1
   xml-js:
     specifier: ^1.6.11
     version: 1.6.11
@@ -2445,6 +2448,11 @@ packages:
     resolution: {integrity: sha512-jmYNElW7yvO7TV33CjSmvSiE2yco3bV2czu/OzDKdMNVZQWfxCblURLhf+47syQRBntjfLdd/H0egrzIG+oaFQ==}
     dev: false
 
+  /punycode@2.3.1:
+    resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
+    engines: {node: '>=6'}
+    dev: false
+
   /qs@6.12.1:
     resolution: {integrity: sha512-zWmv4RSuB9r2mYQw3zxQuHWeU+42aKi1wWig/j4ele4ygELZ7PEO6MM7rim9oAQH2A5MWfsAVf/jPvTPgCbvUQ==}
     engines: {node: '>=0.6'}
@@ -3095,6 +3103,13 @@ packages:
     hasBin: true
     dependencies:
       isexe: 3.1.1
+
+  /whoiser@1.17.1:
+    resolution: {integrity: sha512-dyIwadr1nYHPbz/rqoUTJvIarA2ZzBozi34etDff4Z3o5aj9Z3HPG9AULBRk3D0Vz/xtVAZwez6QaRoeV9GJPg==}
+    engines: {node: '>=15.0.0'}
+    dependencies:
+      punycode: 2.3.1
+    dev: false
 
   /wrap-ansi@7.0.0:
     resolution: {integrity: sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==}
