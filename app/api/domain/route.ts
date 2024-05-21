@@ -55,7 +55,7 @@ export async function POST(request: Request) {
 }
 
 // Method to check domain availability
-export async function isDomainAvailable(domainName: string) {
+async function isDomainAvailable(domainName: string) {
   const domainWhois = await whoiser(domainName, { follow: 1 });
   const firstDomainWhois = whoiser.firstResult(domainWhois);
   const firstTextLine = (firstDomainWhois.text[0] || "").toLowerCase();
